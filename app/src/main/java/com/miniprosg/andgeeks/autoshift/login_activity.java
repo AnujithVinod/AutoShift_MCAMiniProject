@@ -52,6 +52,7 @@ callbackmanager=CallbackManager.Factory.create();
                 // App code
 
                // textview.setText("Sucess \n"+ loginResult.getAccessToken().getUserId()+"\n"+loginResult.getAccessToken().getToken());
+
             }
 
             @Override

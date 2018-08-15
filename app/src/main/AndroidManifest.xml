@@ -31,19 +31,18 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-        <activity android:name=".StartUp"
-
-
+        <activity
+            android:name=".StartUp"
             android:theme="@style/Theme.AppCompat.NoActionBar">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".login_activity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".login_activity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".NavDrawerActivity" />
         <activity
             android:name=".SettingsActivity"
@@ -51,8 +50,8 @@
         <activity
             android:name=".MainActivity"
             android:label="Browse your dreams"
-            android:theme="@style/AppTheme.NoActionBar"
-            ></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ProfileActivity"></activity>
     </application>
 
 </manifest>

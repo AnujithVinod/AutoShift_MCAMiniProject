@@ -7,4 +7,7 @@
     <color name="foreground_material_light">#000792</color>
     <color name="background_material_light">#E7E7E7</color>
     <color name="black">#000000</color>
+    <color name="graylight">#fafafa</color>
+    <color name="startblue">#09C3df</color>
+    <color name="endblue">#0bcce6</color>
 </resources>
