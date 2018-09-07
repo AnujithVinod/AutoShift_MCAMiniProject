@@ -52,7 +52,7 @@ public class login_activity extends AppCompatActivity{
     private String useremail;
     private String password;
     private ProgressDialog pDialog;
-    private String login_url = "http://192.168.1.2/autoshift/login.php";
+    private String login_url = "http://192.168.1.3/autoshift/login.php";
     private SessionHandler session;
 LoginButton loginbutton;
 TextView textview;
@@ -64,6 +64,7 @@ CallbackManager callbackmanager;
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_login_activity);
         super.onCreate(savedInstanceState);
+
 
 
         findViewById(R.id.mainLayout).setOnTouchListener(new View.OnTouchListener()
@@ -195,7 +196,7 @@ public void skip(View v)
                                 if(config.readStatus())
                                 {
                                     config.writeLoginStatus(false);
-                                    config.writeLoggedUser(null,null,null,null,null,null,null,null);
+                                    config.writeLoggedUser(null,null,null,null,null,null,null,null,null);
                                     //Toast.makeText(getApplicationContext(),"You have been logged out",Toast.LENGTH_SHORT).show();
                                 }
 
@@ -207,8 +208,9 @@ public void skip(View v)
                                 String ugender=response.getString("ugender");
                                 String udob=response.getString("udob");
                                 String ulocation=response.getString("ulocation");
+                                String usecans=response.getString("usecans");
                                 config.writeLoginStatus(true);
-                                config.writeLoggedUser(uid,uname,uemail,upass,uphone,ugender,udob,ulocation);
+                                config.writeLoggedUser(uid,uname,uemail,upass,uphone,ugender,udob,ulocation,usecans);
                                 //Toast.makeText(getApplicationContext(), "Welcome "+uname, Toast.LENGTH_SHORT).show();
                                 loadDashboard();
 

@@ -19,7 +19,7 @@ public class SharaedPrefernceConfig {
         editor.commit();
 
     }
-    public void writeLoggedUser(String uid,String uname,String uemail,String upass,String uphone,String ugender,String udob,String ulocation)
+    public void writeLoggedUser(String uid,String uname,String uemail,String upass,String uphone,String ugender,String udob,String ulocation,String usecans)
     {
         SharedPreferences.Editor editor= sharedPreferences.edit();
         editor.putString(context.getResources().getString(R.string.loggeduid),uid);
@@ -30,6 +30,7 @@ public class SharaedPrefernceConfig {
         editor.putString(context.getResources().getString(R.string.loggedugender),ugender);
         editor.putString(context.getResources().getString(R.string.loggedudob),udob);
         editor.putString(context.getResources().getString(R.string.loggedulocation),ulocation);
+        editor.putString(context.getResources().getString(R.string.loggedusecans),usecans);
         editor.commit();
 
     }
@@ -49,8 +50,8 @@ public class SharaedPrefernceConfig {
         String ugender=sharedPreferences.getString(context.getResources().getString(R.string.loggedugender),"null");
         String udob=sharedPreferences.getString(context.getResources().getString(R.string.loggedudob),"null");
         String ulocation=sharedPreferences.getString(context.getResources().getString(R.string.loggedulocation),"null");
-
-        String[] logged_userdata={uid,uname,uemail,uphone,ugender,udob,ulocation};
+        String usecans=sharedPreferences.getString(context.getResources().getString(R.string.loggedusecans),"null");
+        String[] logged_userdata={uid,uname,uemail,uphone,ugender,udob,ulocation,usecans};
 
         return logged_userdata;
     }

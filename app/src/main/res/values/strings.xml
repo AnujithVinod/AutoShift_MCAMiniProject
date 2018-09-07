@@ -95,4 +95,5 @@
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="loggeduphone">logged_uphone</string>
     <string name="loggedudob">logged_udob</string>
+    <string name="loggedusecans">logged_usecans</string>
 </resources>
