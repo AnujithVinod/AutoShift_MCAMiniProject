@@ -19,10 +19,17 @@ public class SharaedPrefernceConfig {
         editor.commit();
 
     }
-    public void writeLoggedUser(String uname)
+    public void writeLoggedUser(String uid,String uname,String uemail,String upass,String uphone,String ugender,String udob,String ulocation)
     {
         SharedPreferences.Editor editor= sharedPreferences.edit();
-        editor.putString(context.getResources().getString(R.string.loggeduser),uname);
+        editor.putString(context.getResources().getString(R.string.loggeduid),uid);
+        editor.putString(context.getResources().getString(R.string.loggeduname),uname);
+        editor.putString(context.getResources().getString(R.string.loggeduemail),uemail);
+        editor.putString(context.getResources().getString(R.string.loggedupass),upass);
+        editor.putString(context.getResources().getString(R.string.loggeduphone),uphone);
+        editor.putString(context.getResources().getString(R.string.loggedugender),ugender);
+        editor.putString(context.getResources().getString(R.string.loggedudob),udob);
+        editor.putString(context.getResources().getString(R.string.loggedulocation),ulocation);
         editor.commit();
 
     }
@@ -33,9 +40,25 @@ public class SharaedPrefernceConfig {
         return status;
     }
 
-    public String readLoggedUser () {
+    public String[] readLoggedUser () {
 
-        String uname=sharedPreferences.getString(context.getResources().getString(R.string.loggeduser),"null");
-        return uname;
+        String uid=sharedPreferences.getString(context.getResources().getString(R.string.loggeduid),"null");
+        String uname=sharedPreferences.getString(context.getResources().getString(R.string.loggeduname),"null");
+        String uemail=sharedPreferences.getString(context.getResources().getString(R.string.loggeduemail),"null");
+        String uphone=sharedPreferences.getString(context.getResources().getString(R.string.loggeduphone),"null");
+        String ugender=sharedPreferences.getString(context.getResources().getString(R.string.loggedugender),"null");
+        String udob=sharedPreferences.getString(context.getResources().getString(R.string.loggedudob),"null");
+        String ulocation=sharedPreferences.getString(context.getResources().getString(R.string.loggedulocation),"null");
+
+        String[] logged_userdata={uid,uname,uemail,uphone,ugender,udob,ulocation};
+
+        return logged_userdata;
     }
+    public String readLoggedPassword () {
+
+
+        String upass=sharedPreferences.getString(context.getResources().getString(R.string.loggedupass),"null");
+        return upass;
+    }
+
 }

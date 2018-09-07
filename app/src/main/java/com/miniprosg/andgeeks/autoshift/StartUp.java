@@ -9,7 +9,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 public class StartUp extends AppCompatActivity {
-    private static int SPLASH=5000;
+    private static int SPLASH=1000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
