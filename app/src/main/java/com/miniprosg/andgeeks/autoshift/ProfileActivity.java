@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 public class ProfileActivity extends AppCompatActivity {
     SharaedPrefernceConfig config;
     TextView uname,uemail,udob,uphone,ulocation;
@@ -27,7 +30,6 @@ public class ProfileActivity extends AppCompatActivity {
         uphone.setText(logged_userdata[3]);
         udob.setText(logged_userdata[5]);
         ulocation.setText(logged_userdata[6]);
-
         Toast.makeText(getApplicationContext(), "Welcome "+uname.getText().toString(), Toast.LENGTH_SHORT).show();
 
 

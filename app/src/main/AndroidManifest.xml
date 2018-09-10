@@ -52,11 +52,22 @@
             android:name=".MainActivity"
             android:label="Browse your dreams"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ProfileActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
-        <activity android:name=".RedirectReg"
+        <activity
+            android:name=".ProfileActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".RedirectReg"
             android:label=""
-            android:theme="@style/Theme.AppCompat.Dialog"></activity>
+            android:theme="@style/Theme.AppCompat.Dialog" />
+        <activity android:name=".UserRegister" />
+        <activity
+            android:name=".ResetPassword"
+            android:label=""
+            android:theme="@style/Theme.AppCompat.Dialog" />
+        <activity
+            android:name=".ChangePassword"
+            android:label=""
+            android:theme="@style/Theme.AppCompat.Dialog"/>
     </application>
 
 </manifest>

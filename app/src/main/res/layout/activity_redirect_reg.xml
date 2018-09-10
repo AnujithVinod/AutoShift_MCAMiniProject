@@ -14,7 +14,7 @@
         android:layout_height="90dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-
+        android:onClick="NewUser"
         android:background="@drawable/button_reg_lightcyan"
         android:text="I am a User"
         android:textAllCaps="true"
@@ -33,7 +33,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="30dp"
-
+        android:onClick="NewAgent"
         android:background="@drawable/button_reg_lightcyan"
         android:text="Register as a showroom"
         android:textAllCaps="true"

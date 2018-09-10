@@ -3,11 +3,14 @@ package com.miniprosg.andgeeks.autoshift;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,6 +41,10 @@ import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.miniprosg.andgeeks.autoshift.helper.PredifValues;
+
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 
 public class login_activity extends AppCompatActivity{
@@ -52,7 +59,9 @@ public class login_activity extends AppCompatActivity{
     private String useremail;
     private String password;
     private ProgressDialog pDialog;
-    private String login_url = "http://192.168.1.3/autoshift/login.php";
+    PredifValues predifValues=new PredifValues();
+    String base_url=predifValues.returnipaddressurl();
+    //private String login_url ="http://192.168.1.3/autoshift_db/login.php";
     private SessionHandler session;
 LoginButton loginbutton;
 TextView textview;
@@ -64,7 +73,6 @@ CallbackManager callbackmanager;
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_login_activity);
         super.onCreate(savedInstanceState);
-
 
 
         findViewById(R.id.mainLayout).setOnTouchListener(new View.OnTouchListener()
@@ -168,6 +176,14 @@ public void skip(View v)
         pDialog.show();
 
     }
+    private void displayLoader1() {
+        pDialog = new ProgressDialog(login_activity.this);
+        pDialog.setMessage("Contacting Our Server....Please wait...");
+        pDialog.setIndeterminate(false);
+        pDialog.setCancelable(false);
+        pDialog.show();
+
+    }
 
     private void login() {
         displayLoader();
@@ -182,7 +198,7 @@ public void skip(View v)
             e.printStackTrace();
         }
         JsonObjectRequest jsArrayRequest = new JsonObjectRequest
-                (Request.Method.POST, login_url, request, new Response.Listener<JSONObject>() {
+                (Request.Method.POST, base_url+"login.php", request, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         pDialog.dismiss();
@@ -246,7 +262,7 @@ public void skip(View v)
      */
     private boolean validateInputs() {
         if(KEY_EMPTY.equals(useremail)){
-            etUsername.setError("Username cannot be empty");
+            etUsername.setError("Email Address cannot be empty");
             etUsername.requestFocus();
             return false;
         }
@@ -256,6 +272,130 @@ public void skip(View v)
             return false;
         }
         return true;
+    }
+
+    public void OnForgot(View view) {
+
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(login_activity.this);
+        builder1.setMessage("How would you like to get your password?");
+        builder1.setCancelable(true);
+
+        builder1.setPositiveButton(
+                "Email Password",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                        emailresend();
+
+                    }
+                });
+
+        builder1.setNegativeButton(
+                "Reset Password",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                        passwordReset();
+
+                    }
+                });
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+
+
+    }
+
+    public void passwordReset()
+    {
+        Intent i = new Intent(getApplicationContext(), ResetPassword.class);
+        startActivity(i);
+    }
+
+    public void emailresend()
+    {
+        final EditText input;
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(login_activity.this);
+        builder1.setMessage("Enter your Email Address");
+        builder1.setCancelable(true);
+        input=new EditText(this);
+        //String inpemail= input.getText().toString();
+       // Toast.makeText(getApplicationContext(),inpemail,Toast.LENGTH_LONG).show();
+        builder1.setView(input);
+        builder1.setPositiveButton(
+                "Send",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        String inpemail= input.getText().toString();
+
+                        if(KEY_EMPTY.equals(inpemail)) {
+                            input.setError("Email Address cannot be empty");
+                            input.requestFocus();
+
+                        }
+                        else
+                            {
+                        displayLoader1();
+                        JSONObject request = new JSONObject();
+                        try {
+                            //Populate the request parameters
+                            //Toast.makeText(getApplicationContext(),"HIHIHI",Toast.LENGTH_LONG).show();
+                            request.put(KEY_USEREMAIL, inpemail);
+                            //request.put(KEY_PASSWORD, password);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        JsonObjectRequest jsArrayRequest = new JsonObjectRequest
+                                (Request.Method.POST, base_url+"index.php", request, new Response.Listener<JSONObject>() {
+                                    @Override
+                                    public void onResponse(JSONObject response) {
+                                        pDialog.dismiss();
+                                        try {
+
+                                                Toast.makeText(getApplicationContext(),response.getString(KEY_MESSAGE), Toast.LENGTH_SHORT).show();
+
+                                        } catch (JSONException e) {
+                                            e.printStackTrace();
+                                        }
+                                    }
+                                }, new Response.ErrorListener() {
+
+                                    @Override
+                                    public void onErrorResponse(VolleyError error) {
+                                        pDialog.dismiss();
+
+                                        //Display error message whenever an error occurs
+                                        Toast.makeText(getApplicationContext(),
+                                                error.getMessage(), Toast.LENGTH_SHORT).show();
+
+                                    }
+                                });
+
+                        // Access the RequestQueue through your singleton class.
+                        MySingleton.getInstance(login_activity.this).addToRequestQueue(jsArrayRequest);
+
+
+
+
+
+
+                        dialog.cancel();
+
+                    }
+                    }
+                });
+
+        builder1.setNegativeButton(
+                "Cancel",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                    }
+                });
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
     }
 }
 

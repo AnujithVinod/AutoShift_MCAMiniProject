@@ -6,8 +6,15 @@
     <color name="solidBlack">#000000</color>
     <color name="foreground_material_light">#000792</color>
     <color name="background_material_light">#E7E7E7</color>
-    <color name="black">#000000</color>
     <color name="graylight">#fafafa</color>
+    <color name="black">#000000</color>
     <color name="startblue">#09C3df</color>
     <color name="endblue">#0bcce6</color>
+
+
+
+    <color name="background_color">#009688</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_greyish">#EEEEEE</color>
+    <color name="button_selectorcolor">#9E9E9E</color>
 </resources>

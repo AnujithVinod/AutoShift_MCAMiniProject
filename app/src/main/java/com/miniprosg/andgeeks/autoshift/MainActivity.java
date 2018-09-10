@@ -19,6 +19,9 @@ import android.widget.Toast;
 
 import com.miniprosg.andgeeks.autoshift.helper.CheckNetworkStatus;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     SharaedPrefernceConfig config;

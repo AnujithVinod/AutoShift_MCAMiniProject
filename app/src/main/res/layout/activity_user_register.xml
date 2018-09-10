@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    android:id="@+id/userLayout"
+    android:background="@color/background_color" >
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:padding="20dp" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Create New Account"
+            android:textColor="@color/white_greyish"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/fullName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:hint="@string/fullName"
+            android:inputType="textCapWords"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/white_greyish" />
+
+        <EditText
+            android:id="@+id/userEmailId"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/white_greyish" />
+
+        <EditText
+            android:id="@+id/mobileNumber"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:hint="@string/mobileNumber"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="16sp" />
+
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/white_greyish" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:hint="@string/passowrd"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/white_greyish" />
+
+        <EditText
+            android:id="@+id/confirmPassword"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:hint="@string/confirmPassword"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="16sp" />
+
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/white_greyish" />
+
+            <com.jaredrummler.materialspinner.MaterialSpinner
+                android:id="@+id/gender"
+                android:hint="Gender"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:background="@android:color/transparent"
+                android:layout_height="wrap_content"/>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/white_greyish" />
+
+
+        <TextView
+            android:id="@+id/dob"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:inputType="phone"
+            android:hint="Date of Birth "
+            android:onClick="OnDateSelect"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/white_greyish" />
+
+        <EditText
+            android:id="@+id/location"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:hint="@string/location"
+            android:inputType="textCapWords"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/white_greyish" />
+
+        <com.jaredrummler.materialspinner.MaterialSpinner
+            android:id="@+id/spinner"
+            android:hint="Select Security Question"
+            android:layout_width="match_parent"
+            android:textSize="16sp"
+            android:background="@android:color/transparent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/secans"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:hint="Answer"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="16sp" />
+
+
+        <CheckBox
+            android:id="@+id/terms_conditions"
+            android:layout_width="wrap_content"
+            android:layout_height="61dp"
+            android:layout_marginTop="7dp"
+            android:text="@string/terms_conditions"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/signUpBtn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@color/com_facebook_button_background_color_selected"
+            android:padding="3dp"
+            android:textColor="#FFFFFF"
+            android:text="@string/signUp"
+            android:onClick="signup"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/already_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/already_user"
+            android:textColor="@color/white_greyish"
+            android:textSize="15sp" />
+        <TextView
+        android:id="@+id/loginhere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:onClick="toLoginPage"
+        android:text="Login here"
+        android:textStyle="italic"
+        android:textColor="@color/white_greyish"
+        android:textSize="15sp" />
+
+    </LinearLayout>
+
+</ScrollView>
