@@ -96,6 +96,8 @@
     <string name="loggeduphone">logged_uphone</string>
     <string name="loggedudob">logged_udob</string>
     <string name="loggedusecans">logged_usecans</string>
+    <string name="loggedutype">logged_utype</string>
+    <string name="onboardingstatus">onboarding_status</string>
     <string name="email">Email Id</string>
     <string name="passowrd">Password</string>
     <string name="login">LOGIN</string>
@@ -114,4 +116,13 @@
     <string name="registered_emailid">Please enter your Registered Email Id below:</string>
     <string name="submit">SUBMIT</string>
     <string name="back">BACK</string>
+    <string-array name="array_spinn">
+        <item>What is your Nick Name?</item>
+        <item>Where is your birth place?</item>
+        <item>What is you pets name?</item>
+        <item>What is your Fathers Name?</item>
+        <item>What is the name of your Favorite Teacher?</item>
+    </string-array>
+    <string name="title_activity_on_board">ActivityOnBoard</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>

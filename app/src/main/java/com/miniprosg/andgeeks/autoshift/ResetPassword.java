@@ -6,7 +6,9 @@ import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -32,7 +34,6 @@ int statusVerify=0;
         uemail=(EditText)findViewById(R.id.uemail1);
         uphone=(EditText)findViewById(R.id.uphone);
         usecans=(EditText)findViewById(R.id.usecans);
-
 
     }
 

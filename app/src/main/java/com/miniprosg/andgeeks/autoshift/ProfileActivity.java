@@ -5,6 +5,8 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,10 +16,13 @@ import java.net.UnknownHostException;
 public class ProfileActivity extends AppCompatActivity {
     SharaedPrefernceConfig config;
     TextView uname,uemail,udob,uphone,ulocation;
+    Button adsagent;
+    String adsagentString;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         config=new SharaedPrefernceConfig(getApplicationContext());
         String[] logged_userdata=config.readLoggedUser();
         uname=findViewById(R.id.tvuname);
@@ -30,6 +35,21 @@ public class ProfileActivity extends AppCompatActivity {
         uphone.setText(logged_userdata[3]);
         udob.setText(logged_userdata[5]);
         ulocation.setText(logged_userdata[6]);
+        adsagentString=logged_userdata[8];
+        //Toast.makeText(getApplicationContext(), adsagentString, Toast.LENGTH_SHORT).show();
+        adsagent=(Button) findViewById(R.id.myads);
+        if(adsagentString.equals("agent"))
+        {
+            adsagent.setText("Explore");
+        }
+        else if (adsagentString.equals("admin"))
+        {
+            adsagent.setVisibility(View.INVISIBLE);
+        }
+        else
+        {
+            adsagent.setText("My Ads");
+        }
         Toast.makeText(getApplicationContext(), "Welcome "+uname.getText().toString(), Toast.LENGTH_SHORT).show();
 
 
@@ -51,7 +71,7 @@ public class ProfileActivity extends AppCompatActivity {
 
 
                         config.writeLoginStatus(false);
-                        config.writeLoggedUser(null,null,null,null,null,null,null,null,null);
+                        config.writeLoggedUser(null,null,null,null,null,null,null,null,null,null);
                         Toast.makeText(getApplicationContext(),"You have been logged out",Toast.LENGTH_SHORT).show();
                         finish();
                         dialog.cancel();
@@ -75,6 +95,19 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     public void myads(View view) {
+
+        if(adsagent.getText().toString().equals("Explore"))
+        {
+            Toast.makeText(getApplicationContext(), "Agent", Toast.LENGTH_SHORT).show();
+
+        }
+
+        else if(adsagent.getText().toString().equals("My Ads"))
+        {
+            Toast.makeText(getApplicationContext(), "User", Toast.LENGTH_SHORT).show();
+        }
+
+
     }
 
     public void skip(View view) {

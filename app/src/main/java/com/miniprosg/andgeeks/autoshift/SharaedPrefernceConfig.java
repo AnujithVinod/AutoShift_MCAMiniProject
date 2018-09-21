@@ -19,7 +19,7 @@ public class SharaedPrefernceConfig {
         editor.commit();
 
     }
-    public void writeLoggedUser(String uid,String uname,String uemail,String upass,String uphone,String ugender,String udob,String ulocation,String usecans)
+    public void writeLoggedUser(String uid,String uname,String uemail,String upass,String uphone,String ugender,String udob,String ulocation,String usecans,String utype)
     {
         SharedPreferences.Editor editor= sharedPreferences.edit();
         editor.putString(context.getResources().getString(R.string.loggeduid),uid);
@@ -31,6 +31,7 @@ public class SharaedPrefernceConfig {
         editor.putString(context.getResources().getString(R.string.loggedudob),udob);
         editor.putString(context.getResources().getString(R.string.loggedulocation),ulocation);
         editor.putString(context.getResources().getString(R.string.loggedusecans),usecans);
+        editor.putString(context.getResources().getString(R.string.loggedutype),utype);
         editor.commit();
 
     }
@@ -51,7 +52,8 @@ public class SharaedPrefernceConfig {
         String udob=sharedPreferences.getString(context.getResources().getString(R.string.loggedudob),"null");
         String ulocation=sharedPreferences.getString(context.getResources().getString(R.string.loggedulocation),"null");
         String usecans=sharedPreferences.getString(context.getResources().getString(R.string.loggedusecans),"null");
-        String[] logged_userdata={uid,uname,uemail,uphone,ugender,udob,ulocation,usecans};
+        String utype=sharedPreferences.getString(context.getResources().getString(R.string.loggedutype),"null");
+        String[] logged_userdata={uid,uname,uemail,uphone,ugender,udob,ulocation,usecans,utype};
 
         return logged_userdata;
     }
@@ -60,6 +62,21 @@ public class SharaedPrefernceConfig {
 
         String upass=sharedPreferences.getString(context.getResources().getString(R.string.loggedupass),"null");
         return upass;
+    }
+    public void writeOnBoardingStatus(boolean status)
+    {
+        SharedPreferences.Editor editor= sharedPreferences.edit();
+        editor.putBoolean(context.getResources().getString(R.string.onboardingstatus),status);
+        editor.commit();
+
+    }
+
+    public boolean readOnBoardingStatus () {
+
+        boolean status=false;
+        status=sharedPreferences.getBoolean(context.getResources().getString(R.string.onboardingstatus),false);
+        return status;
+
     }
 
 }

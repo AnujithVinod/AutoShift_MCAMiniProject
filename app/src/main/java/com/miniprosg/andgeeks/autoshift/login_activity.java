@@ -73,7 +73,7 @@ CallbackManager callbackmanager;
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_login_activity);
         super.onCreate(savedInstanceState);
-
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         findViewById(R.id.mainLayout).setOnTouchListener(new View.OnTouchListener()
         {
@@ -212,7 +212,7 @@ public void skip(View v)
                                 if(config.readStatus())
                                 {
                                     config.writeLoginStatus(false);
-                                    config.writeLoggedUser(null,null,null,null,null,null,null,null,null);
+                                    config.writeLoggedUser(null,null,null,null,null,null,null,null,null,null);
                                     //Toast.makeText(getApplicationContext(),"You have been logged out",Toast.LENGTH_SHORT).show();
                                 }
 
@@ -225,8 +225,9 @@ public void skip(View v)
                                 String udob=response.getString("udob");
                                 String ulocation=response.getString("ulocation");
                                 String usecans=response.getString("usecans");
+                                String utype=response.getString("utype");
                                 config.writeLoginStatus(true);
-                                config.writeLoggedUser(uid,uname,uemail,upass,uphone,ugender,udob,ulocation,usecans);
+                                config.writeLoggedUser(uid,uname,uemail,upass,uphone,ugender,udob,ulocation,usecans,utype);
                                 //Toast.makeText(getApplicationContext(), "Welcome "+uname, Toast.LENGTH_SHORT).show();
                                 loadDashboard();
 

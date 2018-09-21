@@ -5,26 +5,38 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home_layout"
-            android:icon="@drawable/ic_menu_send"
+            android:id="@+id/nav_home"
+            android:icon="@mipmap/ico_home"
             android:title="Home" />
     </group>
-    <item android:title="Browse">
+    <item android:title="Explore"
+        android:icon="@mipmap/ico_explore">
     <menu>
         <item
-            android:id="@+id/nav_first_layout"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="First Layout" />
+            android:id="@+id/nav_browse_cars"
+            android:icon="@mipmap/ico_new_car"
+            android:title="Browse Cars" />
         <item
-            android:id="@+id/nav_second_layout"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Second Layout" />
+            android:id="@+id/nav_browse_bikes"
+            android:icon="@mipmap/ico_new_bike"
+            android:title="Browse Bikes" />
         <item
-            android:id="@+id/nav_third_layout"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Third Layout" />
+            android:id="@+id/nav_compare_all"
+            android:icon="@mipmap/ico_compare"
+            android:title="Compare " />
 
     </menu>
+    </item>
+
+    <item android:title="Tools"
+        android:icon="@mipmap/ico_tools">
+        <menu>
+            <item
+                android:id="@+id/nav_merchent"
+                android:icon="@mipmap/ico_seller"
+                android:title="I am a Merchent" />
+
+        </menu>
     </item>
 
     <item android:title="Communicate">

@@ -156,6 +156,7 @@ public class UserRegister extends AppCompatActivity implements AdapterView.OnIte
             request.put("udob", edGetDOB);
             request.put("ulocation", slocation);
             request.put("usecans", sSecAns);
+            request.put("utype","user");
 
         } catch (JSONException e) {
             e.printStackTrace();

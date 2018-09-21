@@ -8,26 +8,22 @@
     tools:context=".StartUp">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="344dp"
-        android:layout_height="315dp"
-        android:layout_marginBottom="8dp"
+        android:id="@+id/imageView2"
+        android:layout_width="257dp"
+        android:layout_height="213dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="236dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.262"
-        app:srcCompat="@drawable/logoautoshift" />
+        app:srcCompat="@drawable/logo" />
 
     <pl.droidsonroids.gif.GifTextView
-        android:layout_width="194dp"
-        android:layout_height="193dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="110dp"
+        android:layout_height="112dp"
+        android:layout_marginBottom="160dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -38,5 +34,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.648" />
+        app:layout_constraintVertical_bias="0.857" />
+
 </android.support.constraint.ConstraintLayout>

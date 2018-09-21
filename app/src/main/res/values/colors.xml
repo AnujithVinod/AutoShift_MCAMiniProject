@@ -10,11 +10,30 @@
     <color name="black">#000000</color>
     <color name="startblue">#09C3df</color>
     <color name="endblue">#0bcce6</color>
-
-
+    <color name="colorPrimaryOnBoard">#262938</color>
+    <color name="colorPrimaryDarkOnBoard">#181A24</color>
+    <color name="colorAccentOnBoard">#FF4081</color>
+    <color name="colorWhiteOnBoard">#FFFFFF</color>
+    <color name="colorTransparentWhitePrimaryOnBoard">#cccccc</color>
+    <color name="bgBottomNavigation">#fe485a</color>
 
     <color name="background_color">#009688</color>
+    <color name="orange">#FF8C00</color>
     <color name="white">#FFFFFF</color>
     <color name="white_greyish">#EEEEEE</color>
     <color name="button_selectorcolor">#9E9E9E</color>
+
+    <color name="materialcolorPrimary">#FFC107</color>
+    <color name="materialcolorPrimaryDark">#FFA000</color>
+    <color name="materialbackgroundcolor">#fcfcfc</color>
+    <color name="materiallightgray">#ededed</color>
+    <color name="materialdeeppurple">#7c4dff</color>
+    <color name="materialyello">#ffb300</color>
+    <color name="materialgreen">#00bfa5</color>
+    <color name="materialcolorAccent">#FF4081</color>
+    <color name="materialdarkblue">#23283a</color>
+    <color name="materialtestcolorblue">#152b38</color>
+    <color name="materialpink">#fe104d</color>
+    <color name="materialblack_overlay">#66000000</color>
+
 </resources>
