@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity
                                 fragmentManager.beginTransaction().replace(R.id.content_frame,new ThirdFragment()).commit();
                                 break;
                             case R.id.nav_dashboard:
-                                login_dashboard();
+                                login_userdashboard();
                                 break;
                         }
                         return true;
@@ -105,6 +105,77 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         config=new SharaedPrefernceConfig(getApplicationContext());
 
+    }
+
+
+    private void login_userdashboard() {
+
+        if(config.readStatus())
+        {
+
+            Intent i = new Intent(getApplicationContext(), ProfileActivity.class);
+            i.putExtra("utype", "user");
+            startActivity(i);
+        }
+        else
+        {
+            CheckNetworkStatus checkNetworkStatus=new CheckNetworkStatus();
+            boolean status=checkNetworkStatus.isNetworkAvailable(MainActivity.this);
+            if (status)
+            {
+                Toast.makeText(getApplicationContext(), "You are not logged in\nPlease Login to Continue", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(getApplicationContext(), login_activity.class);
+                i.putExtra("utype", "user");
+                startActivity(i);
+
+            }
+            else
+            {
+                Toast.makeText(getApplicationContext(),"No Network Connectivity\nPlease connect to a WIFI Network or turn on Cellular Data",Toast.LENGTH_LONG).show();
+            }
+
+        }
+
+    }
+
+    public void login_agentdashboard()
+    {
+//        SharaedPrefernceConfig config;
+//        config=new SharaedPrefernceConfig(getApplicationContext());
+//        config.writeLoginStatus(false);
+//        config.writeLoggedEmpty();
+
+
+        if(config.readStatus())
+        {
+
+            Intent i = new Intent(getApplicationContext(), ProfileActivity.class);
+            i.putExtra("utype", "agent");
+            startActivity(i);
+        }
+        else
+        {
+            CheckNetworkStatus checkNetworkStatus=new CheckNetworkStatus();
+            boolean status=checkNetworkStatus.isNetworkAvailable(MainActivity.this);
+            if (status)
+            {
+                Toast.makeText(getApplicationContext(), "You are not logged in\nPlease Login to Continue", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(getApplicationContext(), login_activity.class);
+                i.putExtra("utype", "agent");
+                startActivity(i);
+
+            }
+            else
+            {
+                Toast.makeText(getApplicationContext(),"No Network Connectivity\nPlease connect to a WIFI Network or turn on Cellular Data",Toast.LENGTH_LONG).show();
+            }
+
+        }
+
+    }
+    public void login(View v)
+    {
+        login_userdashboard();
     }
 
     @Override
@@ -158,7 +229,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_home) {
             fragmentManager.beginTransaction().replace(R.id.content_frame,new HomeFragment()).commit();
         } else if (id == R.id.nav_merchent) {
-            login_dashboard();
+            login_agentdashboard();
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
@@ -170,56 +241,4 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-
-    public void login_dashboard()
-    {
-        if(config.readStatus())
-        {
-
-            Intent i = new Intent(getApplicationContext(), ProfileActivity.class);
-            startActivity(i);
-        }
-        else
-        {
-            CheckNetworkStatus checkNetworkStatus=new CheckNetworkStatus();
-            boolean status=checkNetworkStatus.isNetworkAvailable(MainActivity.this);
-            if (status)
-            {
-                Toast.makeText(getApplicationContext(), "You are not logged in\nPlease Login to Continue", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(getApplicationContext(), login_activity.class);
-                startActivity(i);
-            }
-            else
-            {
-                Toast.makeText(getApplicationContext(),"No Network Connectivity\nPlease connect to a WIFI Network or turn on Cellular Data",Toast.LENGTH_LONG).show();
-            }
-
-        }
-
-    }
-    public void login(View v)
-    {
-        if(config.readStatus())
-        {
-
-            Intent i = new Intent(getApplicationContext(), ProfileActivity.class);
-            startActivity(i);
-        }
-        else
-        {
-            CheckNetworkStatus checkNetworkStatus=new CheckNetworkStatus();
-            boolean status=checkNetworkStatus.isNetworkAvailable(MainActivity.this);
-            if (status)
-            {
-          //  Intent i = new Intent(getApplicationContext(), login_activity.class);
-            Intent i = new Intent(getApplicationContext(), login_activity.class);
-            startActivity(i);
-            }
-        else
-            {
-                Toast.makeText(getApplicationContext(),"No Network Connectivity\nPlease connect to a WIFI Network or turn on Cellular Data",Toast.LENGTH_LONG).show();
-            }
-
-        }
-    }
 }

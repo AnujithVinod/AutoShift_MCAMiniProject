@@ -20,7 +20,7 @@
     <string name="loggeduemail">logged_uemail</string>
     <string name="loggedupass">logged_upass</string>
     <string name="loggedugender">logged_ugender</string>
-    <string name="loggedulocation">logged_ulocation</string>
+    <string name="loggeduaddress">logged_uaddress</string>
 
     <!-- Strings related to Settings -->
 
@@ -97,6 +97,8 @@
     <string name="loggedudob">logged_udob</string>
     <string name="loggedusecans">logged_usecans</string>
     <string name="loggedutype">logged_utype</string>
+    <string name="loggeduagent">logged_uagent</string>
+    <string name="loggedubrand">logged_ubrand</string>
     <string name="onboardingstatus">onboarding_status</string>
     <string name="email">Email Id</string>
     <string name="passowrd">Password</string>

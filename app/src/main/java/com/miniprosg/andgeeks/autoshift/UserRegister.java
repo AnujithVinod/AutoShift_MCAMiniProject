@@ -157,6 +157,7 @@ public class UserRegister extends AppCompatActivity implements AdapterView.OnIte
             request.put("ulocation", slocation);
             request.put("usecans", sSecAns);
             request.put("utype","user");
+            //Toast.makeText(getApplicationContext(),request.toString(),Toast.LENGTH_LONG).show();
 
         } catch (JSONException e) {
             e.printStackTrace();

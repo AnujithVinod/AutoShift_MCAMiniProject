@@ -11,6 +11,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:testOnly="false"
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
@@ -74,6 +75,12 @@
         <activity
             android:name=".ActivityOnBoarding"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".CompareCarActivity" />
+        <activity android:name=".AgentRegister" />
+        <activity
+            android:name=".AddBrandInfo"
+            android:label=""
+            android:theme="@style/Theme.AppCompat.Dialog"></activity>
     </application>
 
 </manifest>
