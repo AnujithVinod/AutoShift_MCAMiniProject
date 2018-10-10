@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
-
+android:id="@+id/sv_first"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:background="#fcfcfc"
@@ -198,7 +198,14 @@ android:id="@+id/ll">
         android:layout_height="61dp"
         android:padding="15dp"
         android:src="@drawable/ico_or_option" />
-
+<EditText
+    android:id="@+id/testedit"
+    android:layout_width="match_parent"
+    android:layout_height="55dp" />
+<Button
+    android:id="@+id/testbutton"
+    android:layout_width="match_parent"
+    android:layout_height="55dp" />
     <LinearLayout
         android:clipToPadding="false"
         android:gravity="center"

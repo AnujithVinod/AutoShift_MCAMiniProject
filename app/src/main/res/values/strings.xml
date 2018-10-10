@@ -125,6 +125,14 @@
         <item>What is your Fathers Name?</item>
         <item>What is the name of your Favorite Teacher?</item>
     </string-array>
+
+    <string-array name="array_yn">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
     <string name="title_activity_on_board">ActivityOnBoard</string>
     <string name="section_format">Hello World from section: %1$d</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -24,7 +24,7 @@ public class StartUp extends AppCompatActivity {
             @Override
             public void run() {
                 if(config.readOnBoardingStatus()) {
-                    Intent i = new Intent(StartUp.this, MainActivity.class);
+                    Intent i = new Intent(StartUp.this, AgentAddCars.class);
                     //Intent i = new Intent(StartUp.this, ActivityOnBoarding.class);
                     startActivity(i);
                     finish();

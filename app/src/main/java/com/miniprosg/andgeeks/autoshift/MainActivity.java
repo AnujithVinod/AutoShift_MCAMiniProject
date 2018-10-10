@@ -24,6 +24,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.miniprosg.andgeeks.autoshift.helper.CheckNetworkStatus;
+import com.miniprosg.andgeeks.autoshift.helper.GlobalState_Cars;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -38,10 +39,12 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     SharaedPrefernceConfig config;
     BottomNavigationView bottomNavigationView;
+    public GlobalState_Cars globalState_cars;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        globalState_cars=new GlobalState_Cars();
+        globalState_cars.ResetValues();
         final FragmentManager fragmentManager= getFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.content_frame,new HomeFragment()).commit();
         setContentView(R.layout.activity_main);
