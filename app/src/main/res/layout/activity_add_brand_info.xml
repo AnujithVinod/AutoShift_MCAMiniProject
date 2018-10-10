@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    android:id="@+id/agentLayout"
+    >
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="20dp" >
+
+        <EditText
+            android:id="@+id/brandName"
+            android:layout_width="229dp"
+            android:layout_height="51dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="40dp"
+            android:inputType="textCapCharacters"
+            android:hint="Brand Name"
+
+            />
+
+        <TextView
+            android:id="@+id/brandFound"
+            android:layout_width="229dp"
+            android:layout_height="51dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:textSize="15dp"
+            android:gravity="center"
+            android:hint="Founded On"
+            android:onClick="OnFoundDate"
+
+            />
+
+        <EditText
+            android:id="@+id/brandHead"
+            android:layout_width="229dp"
+            android:layout_height="51dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:hint="Head Quaters"
+
+            />
+
+        <EditText
+            android:id="@+id/brandParent"
+            android:layout_width="229dp"
+            android:layout_height="51dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:hint="Parent CO."
+
+            />
+
+        <EditText
+            android:id="@+id/brandWebsite"
+            android:layout_width="229dp"
+            android:layout_height="51dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:hint="WebSite URL"
+
+            />
+
+        <EditText
+            android:id="@+id/brandODetails"
+            android:layout_width="229dp"
+            android:layout_height="51dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:hint="Other Details"
+
+            />
+
+        <Button
+            android:id="@+id/btaddBrand"
+            android:layout_width="181dp"
+            android:layout_height="69dp"
+            android:layout_marginBottom="40dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="40dp"
+            android:onClick="onBrandAdd"
+            android:inputType="textCapCharacters"
+            android:text="Add New Brand"
+            />
+    </LinearLayout>
+
+</ScrollView>

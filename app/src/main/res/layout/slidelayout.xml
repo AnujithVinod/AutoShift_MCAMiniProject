@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+    <ImageView
+        android:id="@+id/slideimage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="152dp"
+        app:srcCompat="@drawable/ico_carob_new" />
+
+    <TextView
+        android:id="@+id/slideheading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/slideimage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:padding="30dp"
+        android:textSize="23sp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        />
+
+
+
+    <TextView
+        android:id="@+id/slidedescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/slideheading"
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:textSize="15sp"
+        android:text="TextView"
+        android:textColor="@android:color/white"
+        >
+    </TextView>
+
+
+
+</RelativeLayout>

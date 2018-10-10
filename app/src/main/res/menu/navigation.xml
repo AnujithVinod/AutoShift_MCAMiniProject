@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@mipmap/ico_home"
+        android:title="Home"
+        app:showAsAction="always|withText" />
+    <item
+    android:id="@+id/nav_cars"
+    android:icon="@mipmap/ico_new_car"
+    android:title="Browse Cars"
+        app:showAsAction="always|withText" />
+
+    <item
+        android:id="@+id/nav_bike"
+        android:icon="@mipmap/ico_new_bike"
+        android:title="Browse Bikes"
+        app:showAsAction="always|withText"/>
+
+    <item
+        android:id="@+id/nav_compare"
+        android:icon="@mipmap/ico_compare"
+        android:title="Compare"
+        app:showAsAction="always|withText"/>
+    <item
+        android:id="@+id/nav_dashboard"
+        android:icon="@mipmap/ico_dashboard"
+        android:title="Dashboard"
+        app:showAsAction="always|withText"/>
+
+
+</menu>
