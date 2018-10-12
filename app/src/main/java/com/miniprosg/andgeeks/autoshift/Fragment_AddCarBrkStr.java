@@ -9,13 +9,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ScrollView;
 
 public class Fragment_AddCarBrkStr extends Fragment {
 
 
     View myview;
-    //  EditText test;
+    EditText efbtype,erbtype,estype,etrad,eodetails;
     Button btnback,btnnext;
 
 
@@ -30,13 +31,32 @@ public class Fragment_AddCarBrkStr extends Fragment {
         btnback=(Button)myview.findViewById(R.id.back);
         btnnext=(Button)myview.findViewById(R.id.next);
 
+        efbtype=(EditText)myview.findViewById(R.id.cbsfbtype);
+        erbtype=(EditText)myview.findViewById(R.id.cbsrbtype);
+        estype=(EditText)myview.findViewById(R.id.cbsstrtype);
+        etrad=(EditText)myview.findViewById(R.id.cbstrad);
+        eodetails=(EditText)myview.findViewById(R.id.cbsodetails);
+
+        efbtype.setText(agentAddCars.globalState_cars.gcbs_fbtype);
+        erbtype.setText(agentAddCars.globalState_cars.gcbs_rbtype);
+        estype.setText(agentAddCars.globalState_cars.gcbs_strtype);
+        etrad.setText(agentAddCars.globalState_cars.gcbs_trad);
+        eodetails.setText(agentAddCars.globalState_cars.gcbs_odetails);
+
         // test.setText(agentAddCars.globalState_cars.gc_name);
         btnnext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentTransaction fragmentTransaction= getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.addcar_frame, new Fragment_AddCarSaftey());
-                fragmentTransaction.commit();
+
+                if(validateInputs())
+                {
+                    fillsuperclass();
+
+                    FragmentTransaction fragmentTransaction= getFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.addcar_frame, new Fragment_AddCarSaftey());
+                    fragmentTransaction.commit();
+                }
+
 
                 //agentAddCars.globalState_cars.gc_name=test.getText().toString();
             }
@@ -44,6 +64,9 @@ public class Fragment_AddCarBrkStr extends Fragment {
         btnback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                fillsuperclass();
+
                 FragmentTransaction fragmentTransaction= getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.addcar_frame, new Fragment_AddCarTransEng());
                 fragmentTransaction.commit();
@@ -52,6 +75,47 @@ public class Fragment_AddCarBrkStr extends Fragment {
 
         return myview;
     }
+
+
+    private boolean validateInputs() {
+        if("".equals(efbtype.getText().toString())){
+            efbtype.setError("Field cannot be empty");
+            efbtype.requestFocus();
+            return false;
+        }
+
+        if("".equals(erbtype.getText().toString())){
+            erbtype.setError("Field cannot be empty");
+            erbtype.requestFocus();
+            return false;
+        }
+        if("".equals(estype.getText().toString())){
+            estype.setError("Field cannot be empty");
+            estype.requestFocus();
+            return false;
+        }
+        if("".equals(etrad.getText().toString())){
+            etrad.setError("Field cannot be empty");
+            etrad.requestFocus();
+            return false;
+        }
+        if("".equals(eodetails.getText().toString())){
+            eodetails.setError("Field cannot be empty");
+            eodetails.requestFocus();
+            return false;
+        }
+
+        return true;
+    }
+    private void fillsuperclass() {
+
+        agentAddCars.globalState_cars.gcbs_fbtype=efbtype.getText().toString();
+        agentAddCars.globalState_cars.gcbs_rbtype=erbtype.getText().toString();
+        agentAddCars.globalState_cars.gcbs_strtype=estype.getText().toString();
+        agentAddCars.globalState_cars.gcbs_trad=etrad.getText().toString();
+        agentAddCars.globalState_cars.gcbs_odetails=eodetails.getText().toString();
+    }
+
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);

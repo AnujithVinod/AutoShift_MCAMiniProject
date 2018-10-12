@@ -122,7 +122,7 @@
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="Wheel Base (cm)"
-            android:inputType="textPassword"
+            android:inputType="number"
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="@color/white"
@@ -206,6 +206,25 @@
             android:background="@android:color/transparent"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
+            android:hint="Seating Capacity"
+            android:inputType="number"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="16sp" />
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/white_greyish" />
+        <EditText
+            android:id="@+id/cvolume"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
             android:hint="Volume (Ltrs)"
             android:inputType="numberDecimal"
             android:padding="10dp"
@@ -232,7 +251,10 @@
             android:textColorHint="@color/white"
             android:textSize="16sp" />
 
-
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/white_greyish" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"

@@ -215,7 +215,7 @@
                 android:textSize="16sp" />
 
             <com.jaredrummler.materialspinner.MaterialSpinner
-                android:id="@+id/spinn_ca"
+                android:id="@+id/spinn_ta"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:entries="@array/array_yn">
@@ -261,7 +261,8 @@
 
         <View
             android:layout_width="fill_parent"
-            android:layout_height="1px"></View>
+            android:layout_height="1px"
+            android:background="@color/white_greyish" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -310,6 +311,11 @@
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:textSize="16sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/white_greyish" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"

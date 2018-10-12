@@ -10,12 +10,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ScrollView;
+import android.widget.TextView;
 
 public class Fragment_AddCarDimen extends Fragment {
 
     View myview;
-    //  EditText test;
+    EditText elength,ewidth,eheight,egclear,ewbase,ekweight,egweight,edoorno,evolume,eseatcap,eodetails;
+    //TextView treldate;
     Button btnback,btnnext;
 
 
@@ -30,13 +33,52 @@ public class Fragment_AddCarDimen extends Fragment {
         btnback=(Button)myview.findViewById(R.id.back);
         btnnext=(Button)myview.findViewById(R.id.next);
 
+        elength=(EditText)myview.findViewById(R.id.clength);
+        ewidth=(EditText)myview.findViewById(R.id.cwidth);
+        eheight=(EditText)myview.findViewById(R.id.cheight);
+        egclear=(EditText)myview.findViewById(R.id.cgclear);
+        ewbase=(EditText)myview.findViewById(R.id.cwbase);
+        ekweight=(EditText)myview.findViewById(R.id.ckweight);
+        egweight=(EditText)myview.findViewById(R.id.cgweight);
+        edoorno=(EditText)myview.findViewById(R.id.cdoor);
+        evolume=(EditText)myview.findViewById(R.id.cvolume);
+        eseatcap=(EditText)myview.findViewById(R.id.cseatcap);
+        eodetails=(EditText)myview.findViewById(R.id.codetails);
+//        eofeatures=(EditText)myview.findViewById(R.id.cofeature);
+//
+//        treldate=(TextView) myview.findViewById(R.id.creldate);
+
+        elength.setText(agentAddCars.globalState_cars.gcd_length);
+        ewidth.setText(agentAddCars.globalState_cars.gcd_width);
+        eheight.setText(agentAddCars.globalState_cars.gcd_height);
+        egclear.setText(agentAddCars.globalState_cars.gcd_gclear);
+        ewbase.setText(agentAddCars.globalState_cars.gcd_wbase);
+        ekweight.setText(agentAddCars.globalState_cars.gcd_kweight);
+        egweight.setText(agentAddCars.globalState_cars.gcd_gweight);
+        edoorno.setText(agentAddCars.globalState_cars.gcd_door);
+        evolume.setText(agentAddCars.globalState_cars.gcd_volume);
+        eseatcap.setText(agentAddCars.globalState_cars.gcd_seatcap);
+        eodetails.setText(agentAddCars.globalState_cars.gcd_odetails);
+
+//        eofeatures.setText(agentAddCars.globalState_cars.gc_ofeatures);
+//
+//        treldate.setText(agentAddCars.globalState_cars.gc_reldate);
+
+
         // test.setText(agentAddCars.globalState_cars.gc_name);
         btnnext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentTransaction fragmentTransaction= getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.addcar_frame, new Fragment_AddCarTransEng());
-                fragmentTransaction.commit();
+
+                if(validateInputs())
+                {
+                    fillsuperclass();
+                    FragmentTransaction fragmentTransaction= getFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.addcar_frame, new Fragment_AddCarTransEng());
+                    fragmentTransaction.commit();
+                }
+
+
 
                 //agentAddCars.globalState_cars.gc_name=test.getText().toString();
             }
@@ -45,14 +87,93 @@ public class Fragment_AddCarDimen extends Fragment {
         btnback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentTransaction fragmentTransaction= getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.addcar_frame, new Fragment_AddCarMain());
-                fragmentTransaction.commit();
+
+                    fillsuperclass();
+                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.addcar_frame, new Fragment_AddCarMain());
+                    fragmentTransaction.commit();
             }
         });
 
         return myview;
     }
+    private void fillsuperclass() {
+
+        agentAddCars.globalState_cars.gcd_length=elength.getText().toString();
+        agentAddCars.globalState_cars.gcd_width=ewidth.getText().toString();
+        agentAddCars.globalState_cars.gcd_height=eheight.getText().toString();
+        agentAddCars.globalState_cars.gcd_gclear=egclear.getText().toString();
+        agentAddCars.globalState_cars.gcd_wbase=ewbase.getText().toString();
+        agentAddCars.globalState_cars.gcd_kweight=ekweight.getText().toString();
+        agentAddCars.globalState_cars.gcd_gweight=egweight.getText().toString();
+        agentAddCars.globalState_cars.gcd_door=edoorno.getText().toString();
+        agentAddCars.globalState_cars.gcd_volume=evolume.getText().toString();
+        agentAddCars.globalState_cars.gcd_seatcap=eseatcap.getText().toString();
+        agentAddCars.globalState_cars.gcd_odetails=eodetails.getText().toString();
+    }
+
+
+    private boolean validateInputs() {
+        if("".equals(elength.getText().toString())){
+            elength.setError("Field cannot be empty");
+            elength.requestFocus();
+            return false;
+        }
+
+        if("".equals(ewidth.getText().toString())){
+            ewidth.setError("Field cannot be empty");
+            ewidth.requestFocus();
+            return false;
+        }
+        if("".equals(eheight.getText().toString())){
+            eheight.setError("Field cannot be empty");
+            eheight.requestFocus();
+            return false;
+        }
+        if("".equals(egclear.getText().toString())){
+            egclear.setError("Field cannot be empty");
+            egclear.requestFocus();
+            return false;
+        }
+        if("".equals(ewbase.getText().toString())){
+            ewbase.setError("Field cannot be empty");
+            ewbase.requestFocus();
+            return false;
+        }
+        if("".equals(ekweight.getText().toString())){
+            ekweight.setError("Field cannot be empty");
+            ekweight.requestFocus();
+            return false;
+        }
+        if("".equals(egweight.getText().toString())){
+            egweight.setError("Field cannot be empty");
+            egweight.requestFocus();
+            return false;
+        }
+        if("".equals(edoorno.getText().toString())){
+            edoorno.setError("Field cannot be empty");
+            edoorno.requestFocus();
+            return false;
+        }
+        if("".equals(eseatcap.getText().toString())){
+            eseatcap.setError("Field cannot be empty");
+            eseatcap.requestFocus();
+            return false;
+        }
+        if("".equals(evolume.getText().toString())){
+            evolume.setError("Field cannot be empty");
+            evolume.requestFocus();
+            return false;
+        }
+        if("".equals(eodetails.getText().toString())){
+            eodetails.setError("Field cannot be empty");
+            eodetails.requestFocus();
+            return false;
+        }
+        return true;
+    }
+
+
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);

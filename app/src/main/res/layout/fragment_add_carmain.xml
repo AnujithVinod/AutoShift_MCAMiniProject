@@ -49,7 +49,7 @@
 
 
 
-        <EditText
+        <TextView
             android:id="@+id/cbrand"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -57,11 +57,10 @@
             android:background="@android:color/transparent"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
-            android:hint="Car Brand"
-            android:inputType="textEmailAddress"
             android:padding="10dp"
             android:singleLine="true"
-            android:textColor="@color/white"
+            android:textColor="#CECECE"
+            android:textStyle="italic"
             android:textColorHint="@color/white"
             android:textSize="16sp" />
         <View
@@ -69,7 +68,7 @@
             android:layout_height="1px"
             android:background="@color/white_greyish" />
 
-        <EditText
+        <TextView
             android:id="@+id/creldate"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -169,7 +168,25 @@
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:textSize="16sp" />
-
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/white_greyish" />
+        <EditText
+            android:id="@+id/cfreeservice"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:hint="Free Service KM "
+            android:inputType="number"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="16sp" />
 
 
         <View

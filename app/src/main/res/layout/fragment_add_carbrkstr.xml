@@ -125,11 +125,15 @@
             android:textColorHint="@color/white"
             android:textSize="16sp" />
 
-
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/white_greyish" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:orientation="horizontal">
+
 
             <Button
                 android:id="@+id/back"

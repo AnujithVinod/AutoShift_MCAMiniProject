@@ -67,6 +67,38 @@
             android:layout_width="fill_parent"
             android:layout_height="1px"
             android:background="@color/white_greyish" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/cdrivetype"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/transparent"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:text="Transmission Type             "
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="16sp" />
+
+            <com.jaredrummler.materialspinner.MaterialSpinner
+                android:id="@+id/spinn_drivetype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></com.jaredrummler.materialspinner.MaterialSpinner>
+
+
+        </LinearLayout>
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/white_greyish" />
+
 
         <EditText
             android:id="@+id/cdesc"
@@ -230,7 +262,10 @@
             android:textColorHint="@color/white"
             android:textSize="16sp" />
 
-
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/white_greyish" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"
