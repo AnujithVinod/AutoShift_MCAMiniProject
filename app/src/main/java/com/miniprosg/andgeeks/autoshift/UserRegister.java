@@ -173,6 +173,7 @@ public class UserRegister extends AppCompatActivity implements AdapterView.OnIte
                             if (response.getInt("status") == 1) {
                                 Toast.makeText(getApplicationContext(), response.getString("message"), Toast.LENGTH_SHORT).show();
                                 Intent i= new Intent(getApplicationContext(),login_activity.class);
+                                i.putExtra("utype", "user");
                                 startActivity(i);
 
 

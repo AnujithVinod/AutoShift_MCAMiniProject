@@ -17,6 +17,8 @@ public class AgentAddCars extends AppCompatActivity {
     int loggeduid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         globalState_cars=new GlobalState_Cars();
         globalState_cars.ResetValues();
@@ -27,6 +29,7 @@ public class AgentAddCars extends AppCompatActivity {
         final FragmentManager fragmentManager= getFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.addcar_frame,new Fragment_AddCarMain()).commit();
         setContentView(R.layout.activity_agent_add_cars);
+        
 
 
 

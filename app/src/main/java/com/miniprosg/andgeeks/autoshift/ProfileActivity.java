@@ -1,6 +1,7 @@
 package com.miniprosg.andgeeks.autoshift;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -45,7 +46,7 @@ public class ProfileActivity extends AppCompatActivity {
             if (logged_userdata[9]!=null)
             {
                 uname.setText(logged_userdata[1]+" ("+logged_userdata[9]+")");
-                adsagent.setText("Explore");
+                adsagent.setText("Add Latest Release");
                 udob.setText("agent");
             }
             ulocation.setText(logged_userdata[6]);
@@ -72,7 +73,7 @@ public class ProfileActivity extends AppCompatActivity {
             //adsagentString=logged_showroomdata[8];
             //Toast.makeText(getApplicationContext(), adsagentString, Toast.LENGTH_SHORT).show();
             adsagent=(Button) findViewById(R.id.myads);
-            adsagent.setText("Explore");
+            adsagent.setText("Add Latest Release");
 
 
         }
@@ -125,9 +126,11 @@ public class ProfileActivity extends AppCompatActivity {
 
     public void myads(View view) {
 
-        if(adsagent.getText().toString().equals("Explore"))
+        if(adsagent.getText().toString().equals("Add Latest Release"))
         {
-            Toast.makeText(getApplicationContext(), "Agent", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(ProfileActivity.this, AgentAddCars.class);
+            //Intent i = new Intent(StartUp.this, ActivityOnBoarding.class);
+            startActivity(i);
 
         }
 

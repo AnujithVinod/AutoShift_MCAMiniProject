@@ -91,7 +91,7 @@ public class GlobalState_Cars{
     public String gcs_bassist;
     public String gcs_slock;
     public String gcs_clock;
-    public String gcs_talarm;
+    public String gcs_psensor;
     public String gcs_alarm;
     public String gcs_dabag;
     public String gcs_pabag;
@@ -161,7 +161,7 @@ public class GlobalState_Cars{
         gcs_bassist="";
         gcs_slock="";
         gcs_clock="";
-        gcs_talarm="";
+        gcs_psensor="";
         gcs_odetails="";
         gcs_alarm="";
         gcs_dabag="";
@@ -277,7 +277,7 @@ public class GlobalState_Cars{
             String cs_bassist,
             String cs_slock,
             String cs_clock,
-            String cs_talarm,
+            String cs_psensor,
             String cs_odetails,
             String cs_alarm,
             String cs_dabag,
@@ -287,7 +287,7 @@ public class GlobalState_Cars{
         gcs_bassist=cs_bassist;
         gcs_slock=cs_slock;
         gcs_clock=cs_clock;
-        gcs_talarm=cs_talarm;
+        gcs_psensor=cs_psensor;
         gcs_alarm=cs_alarm;
         gcs_dabag=cs_dabag;
         gcs_pabag=cs_pabag;

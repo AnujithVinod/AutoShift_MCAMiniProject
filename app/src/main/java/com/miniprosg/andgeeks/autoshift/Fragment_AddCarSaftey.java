@@ -10,6 +10,7 @@ import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ScrollView;
@@ -29,6 +30,9 @@ public class Fragment_AddCarSaftey extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+
+
+
         myview=inflater.inflate(R.layout.fragment_add_carsafety,container,false);
 
 
@@ -160,6 +164,8 @@ public class Fragment_AddCarSaftey extends Fragment {
             }
         });
 
+
+
         return myview;
     }
 
@@ -175,6 +181,9 @@ public class Fragment_AddCarSaftey extends Fragment {
     }
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
+        getActivity().getWindow().setSoftInputMode(
+                WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+
         super.onViewCreated(view, savedInstanceState);
         //
 
@@ -191,7 +200,7 @@ public class Fragment_AddCarSaftey extends Fragment {
         agentAddCars.globalState_cars.gcs_clock=st_clock;
         agentAddCars.globalState_cars.gcs_dabag=st_dabag;
         agentAddCars.globalState_cars.gcs_pabag=st_pabag;
-        agentAddCars.globalState_cars.gcs_talarm=st_talarm;
+        agentAddCars.globalState_cars.gcs_psensor=st_psensor;
         agentAddCars.globalState_cars.gcs_slock=st_alock;
 
     }

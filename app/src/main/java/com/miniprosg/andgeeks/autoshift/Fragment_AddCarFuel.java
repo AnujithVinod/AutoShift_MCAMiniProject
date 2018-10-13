@@ -2,25 +2,47 @@ package com.miniprosg.andgeeks.autoshift;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ScrollView;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.miniprosg.andgeeks.autoshift.helper.PredifValues;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import static com.facebook.FacebookSdk.getApplicationContext;
 
 public class Fragment_AddCarFuel extends Fragment {
 
+    private ProgressDialog pDialog;
+    PredifValues predifValues=new PredifValues();
+    String base_url=predifValues.returnipaddressurl();
+    
     View myview;
     String  c_name, c_brand, c_reldate, c_colour, c_ofeatures,c_manf,
             cbs_fbtype, cbs_rbtype,cbs_strtype,cbs_odetails,
             cte_type, cte_drive, cte_desc, cte_odetails,
             cd_odetails,
-            cs_antilock, cs_bassist, cs_slock, cs_clock, cs_talarm, cs_odetails, cs_alarm, cs_dabag, cs_pabag,
+            cs_antilock, cs_bassist, cs_slock, cs_clock, cs_psensor, cs_odetails, cs_alarm, cs_dabag, cs_pabag,
             cf_type,cf_enorm, cf_odetails;
+
+
+
 
     float   c_sercost,c_warranty,c_warkm,c_freeservice,c_pexshow,c_ponroad,
             cbs_trad,
@@ -68,12 +90,8 @@ public class Fragment_AddCarFuel extends Fragment {
                     fillsuperclass();
                     setlocal_fromsuperclass();
 
+                    addcartoDB();
 
-                    FragmentTransaction fragmentTransaction= getFragmentManager().beginTransaction();
-                    fragmentTransaction.replace(R.id.addcar_frame, new Fragment_AddCarMain());
-                    fragmentTransaction.commit();
-
-                    //agentAddCars.globalState_cars.gc_name=test.getText().toString();    
                 }
                
             }
@@ -154,7 +172,7 @@ public class Fragment_AddCarFuel extends Fragment {
                 cs_bassist=agentAddCars.globalState_cars.gcs_bassist;
                 cs_slock=agentAddCars.globalState_cars.gcs_slock;
                 cs_clock=agentAddCars.globalState_cars.gcs_clock;
-                cs_talarm=agentAddCars.globalState_cars.gcs_talarm;
+                cs_psensor=agentAddCars.globalState_cars.gcs_psensor;
                 cs_odetails=agentAddCars.globalState_cars.gcs_odetails;
                 cs_alarm=agentAddCars.globalState_cars.gcs_alarm;
                 cs_dabag=agentAddCars.globalState_cars.gcs_dabag;
@@ -203,10 +221,20 @@ public class Fragment_AddCarFuel extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
+        getActivity().getWindow().setSoftInputMode(
+                WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         super.onViewCreated(view, savedInstanceState);
         //
 
 
+    }
+    private void displayLoader()
+    {
+        pDialog = new ProgressDialog(getActivity());
+        pDialog.setMessage("Contacting Our Server....Please wait...");
+        pDialog.setIndeterminate(false);
+        pDialog.setCancelable(false);
+        pDialog.show();
 
     }
 
@@ -218,7 +246,120 @@ public class Fragment_AddCarFuel extends Fragment {
         agentAddCars.globalState_cars.gcf_enorm=efenorm.getText().toString();
         agentAddCars.globalState_cars.gcf_odetails=efodetails.getText().toString();
     }
+    public void addcartoDB()
+    {
+        displayLoader();
+        JSONObject request = new JSONObject();
+        try {
+            //Populate the request parameters
 
+            request.put("uid", uid);
+
+            request.put("c_name", c_name);
+            request.put("c_brand", c_brand);
+            request.put("c_reldate",c_reldate);
+            request.put("c_colour", c_colour);
+            request.put("c_ofeatures", c_ofeatures);
+            request.put("c_manf", c_manf);
+            request.put("c_sercost", c_sercost);
+            request.put("c_warranty", c_warranty);
+            request.put("c_warkm", c_warkm);
+            request.put("c_freeservice", c_freeservice);
+            request.put("c_pexshow", c_pexshow);
+            request.put("c_ponroad", c_ponroad);
+
+            request.put("cbs_fbtype",cbs_rbtype);
+            request.put("cbs_rbtype", cbs_rbtype);
+            request.put("cbs_strtype", cbs_strtype);
+            request.put("cbs_odetails", cbs_odetails);
+            request.put("cbs_trad", cbs_trad);
+
+            request.put("cte_type", cte_type);
+            request.put("cte_drive", cte_drive);
+            request.put("cte_desc", cte_desc);
+            request.put("cte_odetails", cte_odetails);
+            request.put("cte_disp", cte_disp);
+            request.put("cte_cyl_no",cte_cyl_no);
+            request.put("cte_max_pow", cte_max_pow);
+            request.put("cte_max_torq", cte_max_torq);
+            request.put("cte_topspeed", cte_topspeed);
+            request.put("cte_acceleration", cte_acceleration);
+            request.put("cte_gear", cte_gear);
+
+            request.put("cd_odetails", cd_odetails);
+            request.put("cd_length", cd_length);
+            request.put("cd_width", cd_width);
+            request.put("cd_height", cd_height);
+            request.put("cd_gclear",cd_gclear);
+            request.put("cd_wbase", cd_wbase);
+            request.put("cd_kweight", cd_kweight);
+            request.put("cd_gweight", cd_gweight);
+            request.put("cd_door", cd_door);
+            request.put("cd_seatcap", cd_seatcap);
+            request.put("cd_volume", cd_volume);
+
+            request.put("cs_antilock", cs_antilock);
+            request.put("cs_bassist", cs_bassist);
+            request.put("cs_slock", cs_slock);
+            request.put("cs_clock",cs_clock);
+            request.put("cs_psensor", cs_psensor);
+            request.put("cs_odetails", cs_odetails);
+            request.put("cs_alarm", cs_alarm);
+            request.put("cs_dabag", cs_dabag);
+            request.put("cs_pabag", cs_pabag);
+
+            request.put("cf_type", cf_type);
+            request.put("cf_enorm", cf_enorm);
+            request.put("cf_odetails", cf_odetails);
+            request.put("cf_mileage", cf_mileage);
+            request.put("cf_tcap", cf_tcap);
+
+
+            //Toast.makeText(getApplicationContext(),request.toString(),Toast.LENGTH_LONG).show();
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        JsonObjectRequest jsArrayRequest = new JsonObjectRequest
+                (Request.Method.POST, base_url+"carfetcherfiles/addnewcar.php", request, new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        pDialog.dismiss();
+                        try {
+                            //Check if user got logged in successfully
+                            //Toast.makeText(getApplicationContext(),"HIHIHI",Toast.LENGTH_LONG).show();
+                            if (response.getInt("status") == 1) {
+                                Toast.makeText(getApplicationContext(), response.getString("message"), Toast.LENGTH_SHORT).show();
+                                getActivity().finish();
+
+
+                            }else{
+                                Toast.makeText(getApplicationContext(),
+                                        response.getString("message"), Toast.LENGTH_SHORT).show();
+
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        pDialog.dismiss();
+
+                        //Display error message whenever an error occurs
+                        Toast.makeText(getApplicationContext(),
+                                error.getMessage(), Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+
+        // Access the RequestQueue through your singleton class.
+        MySingleton.getInstance(getApplicationContext()).addToRequestQueue(jsArrayRequest);
+
+    }
 
     public void SnackbarShow(View view)
     {
