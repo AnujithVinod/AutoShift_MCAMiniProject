@@ -15,12 +15,15 @@ import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.jaredrummler.materialspinner.MaterialSpinner;
+
 public class Fragment_AddCarDimen extends Fragment {
 
     View myview;
     EditText elength,ewidth,eheight,egclear,ewbase,ekweight,egweight,edoorno,evolume,eseatcap,eodetails;
-    //TextView treldate;
+    MaterialSpinner sbody;
     Button btnback,btnnext;
+    String  st_body="Sedan";
 
 
     public AgentAddCars agentAddCars;
@@ -67,6 +70,19 @@ public class Fragment_AddCarDimen extends Fragment {
 
 
         // test.setText(agentAddCars.globalState_cars.gc_name);
+
+        sbody = (MaterialSpinner) myview.findViewById(R.id.spinn_bt);
+
+        sbody.setItems("Sedan","Compact Sedan", "Coupe", "Hatchback"
+                     , "Minivan", "Van", "Convertible"
+                     , "SUV/MUV", "Truck", "Station Wagon");
+        sbody.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
+
+            @Override public void onItemSelected(MaterialSpinner view, int position, long id, String item) {
+                st_body=item;
+            }
+        });
+
         btnnext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -111,6 +127,7 @@ public class Fragment_AddCarDimen extends Fragment {
         agentAddCars.globalState_cars.gcd_volume=evolume.getText().toString();
         agentAddCars.globalState_cars.gcd_seatcap=eseatcap.getText().toString();
         agentAddCars.globalState_cars.gcd_odetails=eodetails.getText().toString();
+        agentAddCars.globalState_cars.gcd_bodytype=st_body;
     }
 
 

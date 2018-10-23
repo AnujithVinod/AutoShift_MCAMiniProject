@@ -73,6 +73,7 @@ public class GlobalState_Cars{
     public String gcd_door;
     public String gcd_seatcap;
     public String gcd_volume;
+    public String gcd_bodytype;
 
 //    public float gcd_length;
 //    public float gcd_width;
@@ -145,6 +146,7 @@ public class GlobalState_Cars{
         gcte_acceleration="";
         gcte_odetails="";
 
+        gcd_bodytype="";
         gcd_length="";
         gcd_width="";
         gcd_height="";

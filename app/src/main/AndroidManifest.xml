@@ -81,7 +81,13 @@
             android:name=".AddBrandInfo"
             android:label=""
             android:theme="@style/Theme.AppCompat.Dialog" />
-        <activity android:name=".AgentAddCars"></activity>
+        <activity android:name=".AgentAddCars" />
+        <activity
+            android:name=".SearchCarRedirect"
+            android:label=""
+            android:theme="@style/Theme.AppCompat.Dialog" />
+        <activity android:name=".Compare_TwoCars"
+            android:label="Compare Cars" ></activity>
     </application>
 
 </manifest>

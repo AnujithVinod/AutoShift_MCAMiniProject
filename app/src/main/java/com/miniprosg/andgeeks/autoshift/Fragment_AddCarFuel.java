@@ -37,7 +37,7 @@ public class Fragment_AddCarFuel extends Fragment {
     String  c_name, c_brand, c_reldate, c_colour, c_ofeatures,c_manf,
             cbs_fbtype, cbs_rbtype,cbs_strtype,cbs_odetails,
             cte_type, cte_drive, cte_desc, cte_odetails,
-            cd_odetails,
+            cd_odetails,cd_bodytype,
             cs_antilock, cs_bassist, cs_slock, cs_clock, cs_psensor, cs_odetails, cs_alarm, cs_dabag, cs_pabag,
             cf_type,cf_enorm, cf_odetails;
 
@@ -167,7 +167,8 @@ public class Fragment_AddCarFuel extends Fragment {
                 cte_odetails=agentAddCars.globalState_cars.gcte_odetails;
                         
                 cd_odetails=agentAddCars.globalState_cars.gcd_odetails;
-                        
+                cd_bodytype=agentAddCars.globalState_cars.gcd_bodytype;
+
                 cs_antilock=agentAddCars.globalState_cars.gcs_antilock;
                 cs_bassist=agentAddCars.globalState_cars.gcs_bassist;
                 cs_slock=agentAddCars.globalState_cars.gcs_slock;
@@ -297,6 +298,7 @@ public class Fragment_AddCarFuel extends Fragment {
             request.put("cd_door", cd_door);
             request.put("cd_seatcap", cd_seatcap);
             request.put("cd_volume", cd_volume);
+            request.put("cd_bodytype", cd_bodytype);
 
             request.put("cs_antilock", cs_antilock);
             request.put("cs_bassist", cs_bassist);
