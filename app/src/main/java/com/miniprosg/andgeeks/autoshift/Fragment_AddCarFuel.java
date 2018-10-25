@@ -20,6 +20,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.jaredrummler.materialspinner.MaterialSpinner;
 import com.miniprosg.andgeeks.autoshift.helper.PredifValues;
 
 import org.json.JSONException;
@@ -39,7 +40,7 @@ public class Fragment_AddCarFuel extends Fragment {
             cte_type, cte_drive, cte_desc, cte_odetails,
             cd_odetails,cd_bodytype,
             cs_antilock, cs_bassist, cs_slock, cs_clock, cs_psensor, cs_odetails, cs_alarm, cs_dabag, cs_pabag,
-            cf_type,cf_enorm, cf_odetails;
+            cf_type,cf_enorm, cf_odetails,st_fuel="Petrol";
 
 
 
@@ -52,7 +53,7 @@ public class Fragment_AddCarFuel extends Fragment {
 
     int uid;
 
-    EditText efmileage,eftype,efcapacity,efenorm,efodetails;
+    EditText efmileage,efcapacity,efenorm,efodetails;
     Button btnback,btnnext;
 
 
@@ -68,16 +69,23 @@ public class Fragment_AddCarFuel extends Fragment {
         btnnext=(Button)myview.findViewById(R.id.next);
 
         efmileage=(EditText)myview.findViewById(R.id.cmileage);
-        eftype=(EditText)myview.findViewById(R.id.cftype);
         efcapacity=(EditText)myview.findViewById(R.id.ctcap);
         efenorm=(EditText)myview.findViewById(R.id.cenorm);
         efodetails=(EditText)myview.findViewById(R.id.codetails);
 
         efmileage.setText(agentAddCars.globalState_cars.gcf_mileage);
-        eftype.setText(agentAddCars.globalState_cars.gcf_type);
         efcapacity.setText(agentAddCars.globalState_cars.gcf_tcap);
         efenorm.setText(agentAddCars.globalState_cars.gcf_enorm);
         efodetails.setText(agentAddCars.globalState_cars.gcf_odetails);
+
+        MaterialSpinner spfuelt = (MaterialSpinner) myview.findViewById(R.id.spinn_ft);
+        spfuelt.setItems("Petrol", "Diesel", "Electric", "Hybrid");
+        spfuelt.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
+
+            @Override public void onItemSelected(MaterialSpinner view, int position, long id, String item) {
+                st_fuel=item;
+            }
+        });
 
         // test.setText(agentAddCars.globalState_cars.gc_name);
         btnnext.setOnClickListener(new View.OnClickListener() {
@@ -118,11 +126,6 @@ public class Fragment_AddCarFuel extends Fragment {
             return false;
         }
 
-        if("".equals(eftype.getText().toString())){
-            eftype.setError("Field cannot be empty");
-            eftype.requestFocus();
-            return false;
-        }
         if("".equals(efcapacity.getText().toString())){
             efcapacity.setError("Field cannot be empty");
             efcapacity.requestFocus();
@@ -242,7 +245,7 @@ public class Fragment_AddCarFuel extends Fragment {
     private void fillsuperclass() {
 
         agentAddCars.globalState_cars.gcf_mileage=efmileage.getText().toString();
-        agentAddCars.globalState_cars.gcf_type=eftype.getText().toString();
+        agentAddCars.globalState_cars.gcf_type=st_fuel;
         agentAddCars.globalState_cars.gcf_tcap=efcapacity.getText().toString();
         agentAddCars.globalState_cars.gcf_enorm=efenorm.getText().toString();
         agentAddCars.globalState_cars.gcf_odetails=efodetails.getText().toString();

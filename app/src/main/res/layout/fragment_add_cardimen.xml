@@ -31,7 +31,6 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/cantilock"
                 android:layout_width="182dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"

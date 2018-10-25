@@ -52,8 +52,7 @@ CardView cardBrand,cardBudget,cardBody,cardFuel;
         cardBrand.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(), SearchCarRedirect.class);
-                i.putExtra("searchby", "Brand");
+                Intent i = new Intent(getActivity(), CarView_Brand.class);
                 startActivity(i);
             }
         });
@@ -61,8 +60,7 @@ CardView cardBrand,cardBudget,cardBody,cardFuel;
         cardBudget.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(), SearchCarRedirect.class);
-                i.putExtra("searchby", "Budget");
+                Intent i = new Intent(getActivity(), CarView_Budget.class);
                 startActivity(i);
             }
         });
@@ -70,8 +68,7 @@ CardView cardBrand,cardBudget,cardBody,cardFuel;
         cardBody.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(), SearchCarRedirect.class);
-                i.putExtra("searchby", "Body");
+                Intent i = new Intent(getActivity(), CarView_Body.class);
                 startActivity(i);
             }
         });
@@ -79,8 +76,7 @@ CardView cardBrand,cardBudget,cardBody,cardFuel;
         cardFuel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(), SearchCarRedirect.class);
-                i.putExtra("searchby", "Fuel");
+                Intent i = new Intent(getActivity(), CarView_Fuel.class);
                 startActivity(i);
             }
         });

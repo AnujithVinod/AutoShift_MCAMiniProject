@@ -83,11 +83,19 @@
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity android:name=".AgentAddCars" />
         <activity
-            android:name=".SearchCarRedirect"
-            android:label=""
-            android:theme="@style/Theme.AppCompat.Dialog" />
-        <activity android:name=".Compare_TwoCars"
-            android:label="Compare Cars" ></activity>
+            android:name=".Compare_TwoCars"
+            android:label="Compare Cars" />
+        <activity
+            android:name=".CarView_Brand"
+            android:label="View Cars By Brands" />
+        <activity
+            android:name=".CarView_Budget"
+            android:label="View Cars By Budget" />
+        <activity
+            android:name=".CarView_Fuel"
+            android:label="View Cars By Fuel Type" />
+        <activity android:name=".CarView_Body"
+            android:label="View Cars By Body Type"></activity>
     </application>
 
 </manifest>
