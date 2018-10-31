@@ -94,8 +94,10 @@
         <activity
             android:name=".CarView_Fuel"
             android:label="View Cars By Fuel Type" />
-        <activity android:name=".CarView_Body"
-            android:label="View Cars By Body Type"></activity>
+        <activity
+            android:name=".CarView_Body"
+            android:label="View Cars By Body Type" />
+        <activity android:name=".AgentAddBikes"></activity>
     </application>
 
 </manifest>

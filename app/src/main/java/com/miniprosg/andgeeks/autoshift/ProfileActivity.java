@@ -45,9 +45,22 @@ public class ProfileActivity extends AppCompatActivity {
             adsagent.setText("My Ads");
             if (logged_userdata[9]!=null)
             {
+                if(logged_userdata[8].equals("CAR"))
+                {
+                    adsagent.setText("Add Latest Car");
+                }
+                else if (logged_userdata[8].equals("BIKE"))
+                {
+                    adsagent.setText("Add Latest Bike");
+
+                }
+                else
+                {
+                    adsagent.setVisibility(View.INVISIBLE);
+                }
+
                 uname.setText(logged_userdata[1]+" ("+logged_userdata[9]+")");
-                adsagent.setText("Add Latest Release");
-                udob.setText("agent");
+                udob.setVisibility(View.INVISIBLE);
             }
             ulocation.setText(logged_userdata[6]);
             adsagentString=logged_userdata[8];
@@ -70,10 +83,23 @@ public class ProfileActivity extends AppCompatActivity {
             uphone.setText(logged_showroomdata[3]);
             udob.setText(logged_showroomdata[4]);
             ulocation.setText(logged_showroomdata[6]);
-            //adsagentString=logged_showroomdata[8];
-            //Toast.makeText(getApplicationContext(), adsagentString, Toast.LENGTH_SHORT).show();
             adsagent=(Button) findViewById(R.id.myads);
-            adsagent.setText("Add Latest Release");
+            if(logged_showroomdata[8].equals("CAR"))
+            {
+                adsagent.setText("Add Latest Car");
+            }
+            else if (logged_showroomdata[8].equals("BIKE"))
+            {
+                adsagent.setText("Add Latest Bike");
+
+            }
+            else
+            {
+                adsagent.setVisibility(View.INVISIBLE);
+            }
+            //Toast.makeText(getApplicationContext(), adsagentString, Toast.LENGTH_SHORT).show();
+
+
 
 
         }
@@ -126,9 +152,17 @@ public class ProfileActivity extends AppCompatActivity {
 
     public void myads(View view) {
 
-        if(adsagent.getText().toString().equals("Add Latest Release"))
+        if(adsagent.getText().toString().equals("Add Latest Car"))
         {
             Intent i = new Intent(ProfileActivity.this, AgentAddCars.class);
+            //Intent i = new Intent(StartUp.this, ActivityOnBoarding.class);
+            startActivity(i);
+
+        }
+
+        if(adsagent.getText().toString().equals("Add Latest Bike"))
+        {
+            Intent i = new Intent(ProfileActivity.this, AgentAddBikes.class);
             //Intent i = new Intent(StartUp.this, ActivityOnBoarding.class);
             startActivity(i);
 
