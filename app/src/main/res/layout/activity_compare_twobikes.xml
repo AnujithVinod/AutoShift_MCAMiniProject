@@ -1,0 +1,1280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    android:background="#229954">
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="5dp" >
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="250dp"
+                android:gravity="center|top"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/spinBrand1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/transparent"
+                    android:hint="Select Brand"
+                    app:ms_dropdown_max_height="400dp"
+                    app:ms_dropdown_height="wrap_content"
+                    android:scrollbars="horizontal"
+                    android:textSize="16sp"
+                    tools:layout_editor_absoluteX="0dp" />
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:background="@color/white_greyish" />
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/spinModel1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/transparent"
+                    android:hint="Select Model"
+                    app:ms_dropdown_max_height="400dp"
+                    app:ms_dropdown_height="wrap_content"
+                    android:textSize="16sp"
+                    tools:layout_editor_absoluteX="0dp" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp"
+                    />
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/linear_set1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Overview"
+                        android:textStyle="bold|italic"
+                        android:textColor="@color/materialyello"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="30px" />
+
+                    <TextView
+                        android:id="@+id/b_manf1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Country of Manufacture"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/b_warper1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Warranty Period"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/b_warkm1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Warranty KiloMeter"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/b_colour1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Avaliable Colors"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="30px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Engine and Transmission"
+                        android:textStyle="bold|italic"
+                        android:textColor="@color/materialyello"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="30px" />
+                    <TextView
+                        android:id="@+id/bte_type1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Transmission Type"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bte_gear1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="GearBox"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bte_desc1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Engine Type"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bte_disp1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Displacement"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bte_cyl_no1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Number of Cylinder"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bte_max_pow1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Maximum Power"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bte_max_torq1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Maximum Torque"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bte_max_speed1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Top Speed"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bte_acceleration1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Accleration"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="30px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Brake and Tyre"
+                        android:textStyle="bold|italic"
+                        android:textColor="@color/materialyello"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="30px" />
+
+                    <TextView
+                        android:id="@+id/btb_fbtype1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Front Brake Type"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/btb_rbtype1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rear Break Type"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+                    <TextView
+                        android:id="@+id/btb_wlsize1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wheel Size"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+                    <TextView
+                        android:id="@+id/btb_trad1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Turning Radius"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="30px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fuel and Mileage"
+                        android:textStyle="bold|italic"
+                        android:textColor="@color/materialyello"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="30px" />
+
+                    <TextView
+                        android:id="@+id/bf_mileage1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mileage"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bf_type1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Type"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bf_tcap1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tank Capacity"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="30px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dimension Details"
+                        android:textStyle="bold|italic"
+                        android:textColor="@color/materialyello"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="30px" />
+
+                    <TextView
+                        android:id="@+id/bd_ridetype1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ride Type"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bd_length1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Length"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bd_width1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Width"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bd_height1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Height"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bd_kweight1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kerb Weight"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bd_sadheight1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Saddle Height "
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bd_seatcap1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Seating Capacity"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bd_svolume1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cargo Volume"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="30px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Saftey and Electronic Specs"
+                        android:textStyle="bold|italic"
+                        android:textColor="@color/materialyello"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="30px" />
+
+                    <TextView
+                        android:id="@+id/bse_batcap1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Battery Capacity"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bse_battype1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Battery Type"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+                    <TextView
+                        android:id="@+id/bse_abs1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ABS"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bse_ignitype1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ignition Type"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bse_speedom1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Speedometer Type"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bse_odom1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Odometer Type"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bse_tripm1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tripmeter"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bse_twinind1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TWin Indicators"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="30px" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Price details"
+                        android:textStyle="bold|italic"
+                        android:textColor="@color/materialyello"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="30px" />
+
+                    <TextView
+                        android:id="@+id/b_ponroad1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Onroad Price"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/b_pexshow1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ex ShowRoom Price"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white_greyish"
+                    />
+            </LinearLayout>
+
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:gravity="center|top"
+                android:orientation="vertical">
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/spinBrand2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/transparent"
+                    android:hint="Select Brand"
+                    android:scrollbars="horizontal"
+                    android:textSize="16sp"
+                    app:ms_dropdown_height="wrap_content"
+                    app:ms_dropdown_max_height="400dp"
+                    tools:layout_editor_absoluteX="0dp" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:background="@color/white_greyish" />
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/spinModel2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/transparent"
+                    android:hint="Select Model"
+                    android:textSize="16sp"
+                    app:ms_dropdown_height="wrap_content"
+                    app:ms_dropdown_max_height="400dp"
+                    tools:layout_editor_absoluteX="0dp" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp" />
+
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/linear_set2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Overview"
+                        android:textStyle="bold|italic"
+                        android:textColor="@color/materialyello"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="30px" />
+
+                    <TextView
+                        android:id="@+id/b_manf2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Country of Manufacture"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/b_warper2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Warranty Period"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/b_warkm2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Warranty KiloMeter"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/b_colour2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Avaliable Colors"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="30px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Engine and Transmission"
+                        android:textStyle="bold|italic"
+                        android:textColor="@color/materialyello"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="30px" />
+                    <TextView
+                        android:id="@+id/bte_type2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Transmission Type"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bte_gear2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="GearBox"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bte_desc2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Engine Type"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bte_disp2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Displacement"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bte_cyl_no2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Number of Cylinder"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bte_max_pow2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Maximum Power"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bte_max_torq2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Maximum Torque"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bte_max_speed2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Top Speed"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bte_acceleration2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Accleration"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="30px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Brake and Tyre"
+                        android:textStyle="bold|italic"
+                        android:textColor="@color/materialyello"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="30px" />
+
+                    <TextView
+                        android:id="@+id/btb_fbtype2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Front Brake Type"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/btb_rbtype2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rear Break Type"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+                    <TextView
+                        android:id="@+id/btb_wlsize2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wheel Size"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+                    <TextView
+                        android:id="@+id/btb_trad2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Turning Radius"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="30px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fuel and Mileage"
+                        android:textStyle="bold|italic"
+                        android:textColor="@color/materialyello"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="30px" />
+
+                    <TextView
+                        android:id="@+id/bf_mileage2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mileage"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bf_type2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Type"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bf_tcap2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tank Capacity"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="30px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dimension Details"
+                        android:textStyle="bold|italic"
+                        android:textColor="@color/materialyello"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="30px" />
+
+                    <TextView
+                        android:id="@+id/bd_ridetype2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ride Type"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bd_length2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Length"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bd_width2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Width"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bd_height2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Height"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bd_kweight2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kerb Weight"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bd_sadheight2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Saddle Height "
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bd_seatcap2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Seating Capacity"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bd_svolume2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cargo Volume"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="30px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Saftey and Electronic Specs"
+                        android:textStyle="bold|italic"
+                        android:textColor="@color/materialyello"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="30px" />
+
+                    <TextView
+                        android:id="@+id/bse_batcap2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Battery Capacity"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bse_battype2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Battery Type"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+                    <TextView
+                        android:id="@+id/bse_abs2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ABS"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bse_ignitype2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ignition Type"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bse_speedom2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Speedometer Type"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bse_odom2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Odometer Type"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bse_tripm2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tripmeter"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/bse_twinind2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tein Indicators"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="30px" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Price details"
+                        android:textStyle="bold|italic"
+                        android:textColor="@color/materialyello"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="30px" />
+
+                    <TextView
+                        android:id="@+id/b_ponroad2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Onroad Price"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5px" />
+
+
+                    <TextView
+                        android:id="@+id/b_pexshow2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ex ShowRoom Price"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+</ScrollView>
+
+
+
+
+

@@ -58,9 +58,19 @@ public class ProfileActivity extends AppCompatActivity {
                 {
                     adsagent.setVisibility(View.INVISIBLE);
                 }
-
+            if(logged_userdata[9].equals("null"))
+            {
+                uname.setText(logged_userdata[1]);
+            }
+            else
+            {
                 uname.setText(logged_userdata[1]+" ("+logged_userdata[9]+")");
-                udob.setVisibility(View.INVISIBLE);
+            }
+                if(udob.getText().toString().equals("null"))
+                {
+                    udob.setVisibility(View.INVISIBLE);
+                }
+
             }
             ulocation.setText(logged_userdata[6]);
             adsagentString=logged_userdata[8];

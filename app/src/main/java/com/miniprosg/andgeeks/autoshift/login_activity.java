@@ -217,7 +217,7 @@ public void skip(View v)
                             if (response.getInt(KEY_STATUS) == 1) {
                                 SharaedPrefernceConfig config;
                                 config=new SharaedPrefernceConfig(getApplicationContext());
-
+                                config.writeLoggedEmpty();
                                 //ARE YOU LOGGED IN ALREADY? USING SHARED PREFERENCES
                                 if(config.readStatus())
                                 {
