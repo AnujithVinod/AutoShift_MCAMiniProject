@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    android:background="#2471A3"
+    tools:context=".NearShowroom">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <com.jaredrummler.materialspinner.MaterialSpinner
+            android:id="@+id/spinstatemet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/transparent"
+            android:hint="State"
+            android:scrollbars="horizontal"
+            android:textSize="16sp"
+            app:ms_dropdown_height="wrap_content"
+            app:ms_dropdown_max_height="400dp"
+            tools:layout_editor_absoluteX="0dp" />
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="5px"
+            android:background="@color/white_greyish" />
+
+        <com.jaredrummler.materialspinner.MaterialSpinner
+            android:id="@+id/spincitymet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/transparent"
+            android:hint="City"
+            app:ms_dropdown_max_height="400dp"
+            app:ms_dropdown_height="wrap_content"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="0dp" />
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="10px"
+            android:background="@color/white_greyish" />
+
+
+            <ListView
+                android:id="@+id/list_showroom"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></ListView>
+
+
+
+    </LinearLayout>
+
+</ScrollView>

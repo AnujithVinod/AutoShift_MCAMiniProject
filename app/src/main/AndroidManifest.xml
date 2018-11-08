@@ -82,11 +82,9 @@
             android:label=""
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity android:name=".AgentAddCars" />
-
         <activity
             android:name=".Compare_TwoCars"
             android:label="Compare Cars" />
-
         <activity
             android:name=".CarView_Brand"
             android:label="View Cars By Brands" />
@@ -99,21 +97,24 @@
         <activity
             android:name=".CarView_Body"
             android:label="View Cars By Body Type" />
-
-
         <activity android:name=".AgentAddBikes" />
-        <activity android:name=".BikeView_Ride"
+        <activity
+            android:name=".BikeView_Ride"
             android:label="View Cars By Ride Type" />
-        <activity android:name=".BikeView_Brand"
+        <activity
+            android:name=".BikeView_Brand"
             android:label="View Cars By Brand" />
-        <activity android:name=".BikeView_Budget"
+        <activity
+            android:name=".BikeView_Budget"
             android:label="View Cars By EMI/Budget" />
-        <activity android:name=".BikeView_Fuel"
+        <activity
+            android:name=".BikeView_Fuel"
             android:label="View Cars By Fuel Type" />
-
-
-        <activity android:name=".Compare_TwoBikes"
-            android:label="Compare Bikes"></activity>
+        <activity
+            android:name=".Compare_TwoBikes"
+            android:label="Compare Bikes" />
+        <activity android:name=".User_AgentInteraction" />
+        <activity android:name=".NearShowroom"></activity>
     </application>
 
 </manifest>

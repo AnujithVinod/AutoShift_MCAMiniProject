@@ -116,6 +116,7 @@ public class SharaedPrefernceConfig {
         String upass=sharedPreferences.getString(context.getResources().getString(R.string.loggedupass),"null");
         return upass;
     }
+
     public void writeOnBoardingStatus(boolean status)
     {
         SharedPreferences.Editor editor= sharedPreferences.edit();

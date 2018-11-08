@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+
+    <LinearLayout android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/lsid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID"
+            android:visibility="invisible"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:id="@+id/lsname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textStyle="bold|italic"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:padding="2dp"
+            android:textColor="#4d4d4d" />
+        <TextView
+            android:id="@+id/lsemail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:id="@+id/lsphone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:id="@+id/lsagent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agent"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/lsaddress"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Address                " />
+    </LinearLayout>
+</LinearLayout>
