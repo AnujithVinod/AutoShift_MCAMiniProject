@@ -49,7 +49,7 @@ public class NearShowroom extends AppCompatActivity {
     private ListView showroomList;
     String base_url=predifValues.returnipaddressurl();
     InputStream inputStream=null;
-    String carorbike,v_name,v_brand,v_type,u_id;
+    String carorbike,v_name,v_brand,v_type,u_id,u_name,s_name;
 
     String state="",city="",brand="",name,email,pwd,confPwd,mobile,secans,agent,address,carOrbike;
     MyListAdapter adapter;
@@ -72,6 +72,7 @@ public class NearShowroom extends AppCompatActivity {
         v_brand= extras.getString("v_brand");
         v_type= extras.getString("v_type");
         u_id = extras.getString("u_id");
+        u_name = extras.getString("u_name");
         NearShowroom.BackTaskState backTaskState=new NearShowroom.BackTaskState();
         backTaskState.execute();
 
@@ -86,8 +87,10 @@ public class NearShowroom extends AppCompatActivity {
 
                 }
                 else {
-                    Intent i = new Intent(getApplicationContext(), User_AgentInteraction.class);
+                    Intent i = new Intent(getApplicationContext(), ShowRoomView.class);
                     i.putExtra("s_id",Sid[position]);
+                    i.putExtra("u_name", u_name);
+                    i.putExtra("s_name",Sname[position]);
                     i.putExtra("u_id", u_id);
                     startActivity(i);
                 }

@@ -1,6 +1,7 @@
 package com.miniprosg.andgeeks.autoshift;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -535,5 +536,26 @@ public class CarView_Budget extends AppCompatActivity {
         MySingleton.getInstance(this).addToRequestQueue(jsArrayRequest);
     }
 
+    public void locate_near_showroom(View view) {
+        final SharaedPrefernceConfig config;
+        config=new SharaedPrefernceConfig(getApplicationContext());
+        if(config.readStatus()) {
+            Intent i = new Intent(getApplicationContext(), NearShowroom.class);
+            i.putExtra("v_type","CAR");
+            i.putExtra("v_brand",get_brand);
+            i.putExtra("v_name",get_model);
+            i.putExtra("u_id",config.readLoggedUser()[0]);
+            i.putExtra("u_name",config.readLoggedUser()[1]);
+            startActivity(i);
+        }
+        else
+        {
 
+            Toast.makeText(getApplicationContext(),"You are not logged in. Login to Continue...",Toast.LENGTH_LONG).show();
+            Intent i = new Intent(getApplicationContext(), login_activity.class);
+            i.putExtra("utype","user");
+            startActivity(i);
+            finish();
+        }
+    }
 }

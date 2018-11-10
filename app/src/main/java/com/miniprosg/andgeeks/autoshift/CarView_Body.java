@@ -212,6 +212,7 @@ public class CarView_Body extends AppCompatActivity {
             i.putExtra("v_brand",get_brand);
             i.putExtra("v_name",get_model);
             i.putExtra("u_id",config.readLoggedUser()[0]);
+            i.putExtra("u_name",config.readLoggedUser()[1]);
             startActivity(i);
         }
         else
@@ -223,7 +224,6 @@ public class CarView_Body extends AppCompatActivity {
             startActivity(i);
             finish();
         }
-        ;
     }
 
 

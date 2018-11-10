@@ -114,8 +114,6 @@
                       android:background="@drawable/my_message"
                       android:onClick="locate_near_showroom"/>
 
-
-
                 </LinearLayout>
                 <View
                     android:layout_width="match_parent"

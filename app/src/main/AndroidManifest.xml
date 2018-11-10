@@ -113,8 +113,19 @@
         <activity
             android:name=".Compare_TwoBikes"
             android:label="Compare Bikes" />
-        <activity android:name=".User_AgentInteraction" />
-        <activity android:name=".NearShowroom"></activity>
+        <activity
+            android:name=".User_AgentInteraction"
+            android:label="Chat With Support Staffs" />
+        <activity
+            android:name=".NearShowroom"
+            android:label="Locate Nearest Showroom" />
+
+        <service
+            android:name=".MSGNotifyService_Agent"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".ShowRoomView"></activity>
     </application>
 
 </manifest>
