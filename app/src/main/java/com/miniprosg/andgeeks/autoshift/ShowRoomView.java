@@ -17,7 +17,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class ShowRoomView extends AppCompatActivity {
-    String SID,UID,SNAME,UNAME;
+    String SID,UID,SNAME,UNAME,VID;
     TextView
             v_brand,
             v_email,
@@ -34,6 +34,7 @@ public class ShowRoomView extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         SID= extras.getString("s_id");
+        VID= extras.getString("v_id");
         UID=extras.getString("u_id");
         SNAME=extras.getString("s_name");
         UNAME=extras.getString("u_name");
@@ -101,6 +102,7 @@ public class ShowRoomView extends AppCompatActivity {
 
         Intent i = new Intent(getApplicationContext(), User_AgentInteraction.class);
         i.putExtra("s_id",SID);
+        i.putExtra("v_id",VID);
         i.putExtra("u_name", UNAME);
         i.putExtra("s_name",SNAME);
         i.putExtra("u_id", UID);

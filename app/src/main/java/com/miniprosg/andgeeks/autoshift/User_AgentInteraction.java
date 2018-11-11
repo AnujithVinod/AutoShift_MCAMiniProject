@@ -58,7 +58,7 @@ public class User_AgentInteraction extends AppCompatActivity {
     TextView MSGRequest,MSGResponse,AgentName,UserName;
     private ArrayAdapter<String> adapter;
     private ArrayList<String> arrayList;
-    String SID,UID,SNAME,UNAME;
+    String SID,UID,SNAME,UNAME,VID;
     PredifValues predifValues=new PredifValues();
     String base_url=predifValues.returnipaddressurl();
     private ProgressDialog pDialog;
@@ -74,7 +74,7 @@ public class User_AgentInteraction extends AppCompatActivity {
         UID=extras.getString("u_id");
         SNAME=extras.getString("s_name");
         UNAME=extras.getString("u_name");
-
+        VID= extras.getString("v_id");
 
 
         setContentView(R.layout.activity_user_agent_interaction);
@@ -149,6 +149,7 @@ public class User_AgentInteraction extends AppCompatActivity {
             request.put("message", message);
             request.put("msgdate", msgdate);
             request.put("msgtime", msgtime);
+            request.put("v_id", VID);
 
         } catch (JSONException e) {
             e.printStackTrace();

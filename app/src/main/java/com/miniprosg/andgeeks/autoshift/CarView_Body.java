@@ -104,7 +104,7 @@ public class CarView_Body extends AppCompatActivity {
 
     LinearLayout layoutset,layoutspinner;
 
-    String get_brand,get_model,get_body="Sedan";
+    String get_brand,get_model,get_body="Sedan",c_id;
 
     MaterialSpinner spinnerbrand,spinnermodel,spinnerbody;
 
@@ -211,6 +211,7 @@ public class CarView_Body extends AppCompatActivity {
             i.putExtra("v_type","CAR");
             i.putExtra("v_brand",get_brand);
             i.putExtra("v_name",get_model);
+            i.putExtra("v_id",c_id);
             i.putExtra("u_id",config.readLoggedUser()[0]);
             i.putExtra("u_name",config.readLoggedUser()[1]);
             startActivity(i);
@@ -449,6 +450,8 @@ public class CarView_Body extends AppCompatActivity {
 //                                Toast.makeText(getApplicationContext(),"message", Toast.LENGTH_SHORT).show();
 
                                 //            c_manf1.setText("Country of Manufacture\n"+response.getString("c_manf"));
+
+                                c_id=response.getString("c_id");
 
                                 c_manf.setText(Html.fromHtml("Country of Manufacture <br><strong><em>"+response.getString("c_manf")+"</strong></em> "));
                                 c_warper.setText(Html.fromHtml("Warranty Period <br><strong><em>"+response.getString("c_warper")+"</strong></em> "));

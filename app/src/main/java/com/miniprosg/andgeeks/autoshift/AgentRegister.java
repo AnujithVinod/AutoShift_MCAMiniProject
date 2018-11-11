@@ -387,10 +387,10 @@ public class AgentRegister extends AppCompatActivity {
     }
 
 
-    private void displayLoader()
+    private void displayLoader2()
     {
         pDialog = new ProgressDialog(AgentRegister.this);
-        pDialog.setMessage("Contacting Our Server....Please wait...");
+        pDialog.setMessage("Registering with Database. This might take a second or two....");
         pDialog.setIndeterminate(false);
         pDialog.setCancelable(false);
         pDialog.show();
@@ -460,6 +460,9 @@ public class AgentRegister extends AppCompatActivity {
                                 //Check if user got logged in successfully
                                 //Toast.makeText(getApplicationContext(),"HIHIHI",Toast.LENGTH_LONG).show();
                                 if (response.getInt("status") == 1) {
+
+                                    callto_agentmailer();
+
                                     Toast.makeText(getApplicationContext(), response.getString("message"), Toast.LENGTH_SHORT).show();
                                     Intent i= new Intent(getApplicationContext(),login_activity.class);
                                     i.putExtra("utype", "agent");
@@ -561,6 +564,51 @@ public class AgentRegister extends AppCompatActivity {
         Intent i= new Intent(getApplicationContext(),login_activity.class);
         startActivity(i);
     }
+    private void callto_agentmailer() {
 
+        displayLoader2();
+        JSONObject request = new JSONObject();
+        try {
+            //Populate the request parameters
+            request.put("sname", name);
+            request.put("semail", email);
+            request.put("spass", pwd);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        JsonObjectRequest jsArrayRequest = new JsonObjectRequest
+                (Request.Method.POST, base_url+"extras/reg_agentmailer.php", request, new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        pDialog.dismiss();
+                        try {
+                            //Check if user got logged in successfully
+                            //Toast.makeText(getApplicationContext(),"HIHIHI",Toast.LENGTH_LONG).show();
+                            if (response.getInt("status") == 1) {
+
+                            }else{
+
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        pDialog.dismiss();
+
+                        //Display error message whenever an error occurs
+                        Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+
+        // Access the RequestQueue through your singleton class.
+        MySingleton.getInstance(this).addToRequestQueue(jsArrayRequest);
+
+    }
 
 }

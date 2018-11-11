@@ -140,7 +140,14 @@ public class UserRegister extends AppCompatActivity implements AdapterView.OnIte
         pDialog.show();
 
     }
+    private void displayLoader2() {
+        pDialog = new ProgressDialog(UserRegister.this);
+        pDialog.setMessage("Registering with Database. This might take a second or two....");
+        pDialog.setIndeterminate(false);
+        pDialog.setCancelable(false);
+        pDialog.show();
 
+    }
     public void registerMe()
     {
         displayLoader1();
@@ -171,6 +178,8 @@ public class UserRegister extends AppCompatActivity implements AdapterView.OnIte
                             //Check if user got logged in successfully
                             //Toast.makeText(getApplicationContext(),"HIHIHI",Toast.LENGTH_LONG).show();
                             if (response.getInt("status") == 1) {
+                                callto_usermailer();
+
                                 Toast.makeText(getApplicationContext(), response.getString("message"), Toast.LENGTH_SHORT).show();
                                 Intent i= new Intent(getApplicationContext(),login_activity.class);
                                 i.putExtra("utype", "user");
@@ -203,6 +212,56 @@ public class UserRegister extends AppCompatActivity implements AdapterView.OnIte
         MySingleton.getInstance(this).addToRequestQueue(jsArrayRequest);
 
     }
+
+    private void callto_usermailer() {
+
+        displayLoader2();
+        JSONObject request = new JSONObject();
+        try {
+            //Populate the request parameters
+
+            request.put("uname", sUname);
+            request.put("uemail", sEmail);
+            request.put("upass", sPwd);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        JsonObjectRequest jsArrayRequest = new JsonObjectRequest
+                (Request.Method.POST, base_url+"extras/reg_usermailer.php", request, new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        pDialog.dismiss();
+                        try {
+                            //Check if user got logged in successfully
+                            //Toast.makeText(getApplicationContext(),"HIHIHI",Toast.LENGTH_LONG).show();
+                            if (response.getInt("status") == 1) {
+
+                            }else{
+
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        pDialog.dismiss();
+
+                        //Display error message whenever an error occurs
+                        Toast.makeText(getApplicationContext(),
+                                error.getMessage(), Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+
+        // Access the RequestQueue through your singleton class.
+        MySingleton.getInstance(this).addToRequestQueue(jsArrayRequest);
+
+    }
+
     private boolean validateInputs() {
         if("".equals(sUname)){
             selectName.setError("Name cannot be empty");

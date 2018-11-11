@@ -17,8 +17,8 @@ import java.net.UnknownHostException;
 public class ProfileActivity extends AppCompatActivity {
     SharaedPrefernceConfig config;
     TextView uname,uemail,udob,uphone,ulocation;
-    Button adsagent;
-    String adsagentString,userType;
+    Button adsagent,interationRED;
+    String adsagentString,userType,s_id="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +26,7 @@ public class ProfileActivity extends AppCompatActivity {
         //Toast.makeText(getApplicationContext(),"LOGIN PAGE",Toast.LENGTH_LONG).show();
 
         Bundle extras = getIntent().getExtras();
+        interationRED=(Button) findViewById(R.id.interaction);
         userType = extras.getString("utype");
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         config=new SharaedPrefernceConfig(getApplicationContext());
@@ -43,8 +44,10 @@ public class ProfileActivity extends AppCompatActivity {
             uphone.setText(logged_userdata[3]);
             udob.setText(logged_userdata[4]);
             adsagent.setText("My Ads");
+            s_id=logged_userdata[0];
             if (logged_userdata[9]!=null)
             {
+
                 if(logged_userdata[8].equals("CAR"))
                 {
                     adsagent.setText("Add Latest Car");
@@ -94,6 +97,7 @@ public class ProfileActivity extends AppCompatActivity {
             udob.setText(logged_showroomdata[4]);
             ulocation.setText(logged_showroomdata[6]);
             adsagent=(Button) findViewById(R.id.myads);
+            s_id=logged_showroomdata[0];
             if(logged_showroomdata[8].equals("CAR"))
             {
                 adsagent.setText("Add Latest Car");
@@ -109,16 +113,24 @@ public class ProfileActivity extends AppCompatActivity {
             }
             //Toast.makeText(getApplicationContext(), adsagentString, Toast.LENGTH_SHORT).show();
 
-
-
-
         }
 
+        if(adsagent.getText().toString().equals("Add Latest Car"))
+        {
+            interationRED.setText("Check Car Queries");
+        }
 
+       else if(adsagent.getText().toString().equals("Add Latest Bike"))
+        {
+            interationRED.setText("Check Bike Queries");
+
+        }
+        else
+        {
+            interationRED.setVisibility(View.INVISIBLE);
+        }
 
         Toast.makeText(getApplicationContext(), "Welcome "+uname.getText().toString(), Toast.LENGTH_SHORT).show();
-
-
 
     }
 
@@ -189,5 +201,32 @@ public class ProfileActivity extends AppCompatActivity {
     public void skip(View view) {
 
         finish();
+    }
+
+    public void interaction(View view) {
+        if (s_id.equals(""))
+        {
+
+        }
+        else {
+
+            if (interationRED.getText().toString().equals("Check Car Queries")) {
+                //Toast.makeText(getApplicationContext(),"BIKE",Toast.LENGTH_LONG).show();
+                Intent i = new Intent(ProfileActivity.this, AgentMSGLookup.class);
+                i.putExtra("s_id", s_id);
+                i.putExtra("v_type", "CAR");
+                startActivity(i);
+            }
+            else if (interationRED.getText().toString().equals("Check Bike Queries")) {
+                Intent i = new Intent(ProfileActivity.this, AgentMSGLookup.class);
+                //Toast.makeText(getApplicationContext(),"CAR",Toast.LENGTH_LONG).show();
+                i.putExtra("s_id", s_id);
+                i.putExtra("v_type", "BIKE");
+                startActivity(i);
+
+            } else {
+
+            }
+        }
     }
 }
