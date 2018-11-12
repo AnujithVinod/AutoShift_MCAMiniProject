@@ -452,7 +452,6 @@ public class CarView_Body extends AppCompatActivity {
                                 //            c_manf1.setText("Country of Manufacture\n"+response.getString("c_manf"));
 
                                 c_id=response.getString("c_id");
-
                                 c_manf.setText(Html.fromHtml("Country of Manufacture <br><strong><em>"+response.getString("c_manf")+"</strong></em> "));
                                 c_warper.setText(Html.fromHtml("Warranty Period <br><strong><em>"+response.getString("c_warper")+"</strong></em> "));
                                 c_warkm.setText(Html.fromHtml("Warranty KMS <br><strong><em>"+response.getString("c_warkm")+"</strong></em> "));

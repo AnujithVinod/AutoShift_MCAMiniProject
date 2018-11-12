@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -44,7 +46,7 @@ public class AgentMSGLookup extends AppCompatActivity {
              Umsg={"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""},
              Utime={"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""},
              Udate={"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""},
-             Mid={"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""};
+             Usid={"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""};
 
     ArrayList<String> datalist=new ArrayList<>();
 
@@ -65,6 +67,7 @@ public class AgentMSGLookup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agent_msglookup);
+
         queryList=(ListView)findViewById(R.id.list_query);
         Bundle extras = getIntent().getExtras();
         s_id = extras.getString("s_id");
@@ -78,15 +81,17 @@ public class AgentMSGLookup extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // TODO Auto-generated method stub
-                if(Mid[position].equals(""))
+                if(Usid[position].equals(""))
                 {
 
                 }
                 else
                 {
-                    Intent i = new Intent(getApplicationContext(), ShowRoomView.class);
+                    Intent i = new Intent(getApplicationContext(), Agent_UserInteraction.class);
                     i.putExtra("u_name",Uname[position]);
-                    i.putExtra("s_id",Mid[position]);
+                    i.putExtra("u_id",Usid[position]);
+                    i.putExtra("s_id",s_id);
+                    i.putExtra("s_name",R.string.loggeduname);
                     startActivity(i);
                 }
             }
@@ -99,7 +104,11 @@ public class AgentMSGLookup extends AppCompatActivity {
             super.onPreExecute();
             listmodel= new ArrayList<String>();
             listmodel.clear();
-//          String[] Sname={"","","","",""},Semail={"","","","",""},Saddress={"","","","",""},Sphone={"","","","",""},Sagent={"","","","",""},Sid={"","","","",""};
+            String[] Uname={"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""},
+                    Umsg={"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""},
+                    Utime={"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""},
+                    Udate={"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""},
+                    Usid={"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""};
 
         }
 
@@ -143,20 +152,7 @@ public class AgentMSGLookup extends AppCompatActivity {
                 {
                     JSONObject jsonObject = jArray.getJSONObject(i);
 
-                    //
-//                    SELECT DISTINCT(c_name) c_name from tblcar_main t1, tbl_curesponse t2 WHERE t1.c_id=t2.v_id AND t2.shr_id=1
-
-                    // The return is c_name. So no need to change getString() value
                     listmodel.add(jsonObject.getString("c_name"));
-
-//
-//                    SELECT DISTINCT(c_name) from tblcar_main t1, tbl_curesponse t2 WHERE t1.c_id=t2.v_id AND t2.shr_id=1
-////
-//                    Uname[i]=jsonObject.getString("uname");
-//                    Umsg[i]=jsonObject.getString("message");
-//                    Utime[i]=jsonObject.getString("msgtime");
-//                    Udate[i]=jsonObject.getString("msgdate");
-//                    Mid[i]=jsonObject.getString("resid");
 
                 }
             } catch (JSONException e) {
@@ -190,11 +186,6 @@ public class AgentMSGLookup extends AppCompatActivity {
 
         protected void onPreExecute() {
             super.onPreExecute();
-//            String[] Uname={"","","","",""},
-//                    Umsg={"","","","",""},
-//                    Utime={"","","","",""},
-//                    Udate={"","","","",""},
-//                    Mid={"","","","",""};;
         }
 
         @Override
@@ -239,7 +230,7 @@ public class AgentMSGLookup extends AppCompatActivity {
                     Umsg[i]=jsonObject.getString("message");
                     Utime[i]=jsonObject.getString("msgtime");
                     Udate[i]=jsonObject.getString("msgdate");
-                    Mid[i]=jsonObject.getString("res_id");
+                    Usid[i]=jsonObject.getString("uid");
 
 
                 }
@@ -252,7 +243,7 @@ public class AgentMSGLookup extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void aVoid)
         {
-            adapter=new MyQueryListAdapter(AgentMSGLookup.this,Uname,Umsg,Utime,Udate,Mid);
+            adapter=new MyQueryListAdapter(AgentMSGLookup.this,Uname,Umsg,Utime,Udate,Usid);
             queryList.setAdapter(adapter);
             super.onPostExecute(aVoid);
             adapter.notifyDataSetChanged();

@@ -126,7 +126,8 @@
             android:exported="true" />
 
         <activity android:name=".ShowRoomView" />
-        <activity android:name=".AgentMSGLookup"></activity>
+        <activity android:name=".AgentMSGLookup" />
+        <activity android:name=".Agent_UserInteraction"></activity>
     </application>
 
 </manifest>

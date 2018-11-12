@@ -1,5 +1,4 @@
 package com.miniprosg.andgeeks.autoshift;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -52,7 +51,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-public class User_AgentInteraction extends AppCompatActivity {
+public class Agent_UserInteraction extends AppCompatActivity {
 
     private EditText edMessage;
     private ListView messageList;
@@ -60,7 +59,8 @@ public class User_AgentInteraction extends AppCompatActivity {
     TextView MSGRequest,MSGResponse,AgentName,UserName;
     private ArrayAdapter<String> adapter;
     private ArrayList<String> arrayList;
-    String SID,UID,SNAME,UNAME,VID;
+    String SID,UID,SNAME,UNAME;
+    //int VID;
     PredifValues predifValues=new PredifValues();
     String base_url=predifValues.returnipaddressurl();
     private ProgressDialog pDialog;
@@ -69,18 +69,16 @@ public class User_AgentInteraction extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        Toast.makeText(getApplicationContext(),"Please Click Refresh To Load Messages",Toast.LENGTH_LONG).show();
 
         Bundle extras = getIntent().getExtras();
         SID= extras.getString("s_id");
         UID=extras.getString("u_id");
         SNAME=extras.getString("s_name");
         UNAME=extras.getString("u_name");
-        VID= extras.getString("v_id");
-
-
-        setContentView(R.layout.activity_user_agent_interaction);
-        findViewById(R.id.useragentLayout).setOnTouchListener(new View.OnTouchListener()
+        //VID=0;
+        setContentView(R.layout.activity_agent_user_interaction);
+        findViewById(R.id.agentuserLayout).setOnTouchListener(new View.OnTouchListener()
         {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent)
@@ -96,13 +94,9 @@ public class User_AgentInteraction extends AppCompatActivity {
         AgentName=(TextView)findViewById(R.id.agentName);
         UserName=(TextView)findViewById(R.id.userName);
         MSGResponse=(TextView)findViewById(R.id.response);
-        MSGRequest.setText("");
-        fillCommunicationMsgs();
-
-        AgentName.setText(SNAME);
-        UserName.setText(UNAME+" (YOU)");
-
-
+        edMessage.setText("");
+        AgentName.setText("YOU");
+        UserName.setText(UNAME);
 
         btnMessageSent.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -122,27 +116,27 @@ public class User_AgentInteraction extends AppCompatActivity {
 
                 }
                 else
-                {   MSGRequest.setText("");
+                {   //MSGRequest.setText("");
                     fillMsgDB(msg,formattedDate,formattedTime);
                 }
 
             }
         });
+
+        //fillCommunicationMsgs();
     }
 
     private void fillCommunicationMsgs() {
-        User_AgentInteraction.BackTaskFillAgentMsgs backTaskFillAgentMsgs=new User_AgentInteraction.BackTaskFillAgentMsgs();
+        Agent_UserInteraction.BackTaskFillAgentMsgs backTaskFillAgentMsgs=new Agent_UserInteraction.BackTaskFillAgentMsgs();
         backTaskFillAgentMsgs.execute();
 
-        User_AgentInteraction.BackTaskFillUserMsgs backTaskFillUserMsgs=new User_AgentInteraction.BackTaskFillUserMsgs();
+        Agent_UserInteraction.BackTaskFillUserMsgs backTaskFillUserMsgs=new Agent_UserInteraction.BackTaskFillUserMsgs();
         backTaskFillUserMsgs.execute();
-
-
 
     }
 
     private void displayLoader() {
-        pDialog = new ProgressDialog(User_AgentInteraction.this);
+        pDialog = new ProgressDialog(Agent_UserInteraction.this);
         pDialog.setMessage("Contacting Our Server....Please wait...");
         pDialog.setIndeterminate(false);
         pDialog.setCancelable(false);
@@ -161,13 +155,13 @@ public class User_AgentInteraction extends AppCompatActivity {
             request.put("message", message);
             request.put("msgdate", msgdate);
             request.put("msgtime", msgtime);
-            request.put("v_id", VID);
+            request.put("v_id", "0");
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
         JsonObjectRequest jsArrayRequest = new JsonObjectRequest
-                (Request.Method.POST, base_url+"extras/fillMsg_user2agent.php", request, new Response.Listener<JSONObject>() {
+                (Request.Method.POST, base_url+"extras/fillMsg_agent2user.php", request, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         pDialog.dismiss();
@@ -271,7 +265,7 @@ public class User_AgentInteraction extends AppCompatActivity {
 
             super.onPostExecute(aVoid);
 
-            MSGRequest.setText(sb.toString());
+            MSGResponse.setText(sb.toString());
 
         }
     }
@@ -348,7 +342,7 @@ public class User_AgentInteraction extends AppCompatActivity {
 
             super.onPostExecute(aVoid);
 
-            MSGResponse.setText(sb.toString());
+            MSGRequest.setText(sb.toString());
 
         }
     }
