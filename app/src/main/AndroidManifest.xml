@@ -125,9 +125,22 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".ShowRoomView" />
-        <activity android:name=".AgentMSGLookup" />
-        <activity android:name=".Agent_UserInteraction"></activity>
+        <activity
+            android:name=".ShowRoomView"
+            android:label="" />
+        <activity
+            android:name=".AgentMSGLookup"
+            android:label="View Conversations" />
+        <activity
+            android:name=".Agent_UserInteraction"
+            android:label="Chat With Customers" />
+        <activity
+            android:name=".UserMSGLookup"
+            android:label="View Conversations" />
+        <activity android:name=".UpdateProfile_User"
+            android:label="Update Profile" />
+        <activity android:name=".UpdateProfile_Agent"
+            android:label="Update Profile" ></activity>
     </application>
 
 </manifest>

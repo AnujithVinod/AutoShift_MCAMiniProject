@@ -31,7 +31,6 @@ public class ShowRoomView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_showroom_view);
-
         Bundle extras = getIntent().getExtras();
         SID= extras.getString("s_id");
         VID= extras.getString("v_id");

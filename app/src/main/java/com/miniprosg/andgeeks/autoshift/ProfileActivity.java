@@ -18,7 +18,7 @@ public class ProfileActivity extends AppCompatActivity {
     SharaedPrefernceConfig config;
     TextView uname,uemail,udob,uphone,ulocation;
     Button adsagent,interationRED;
-    String adsagentString,userType,s_id="";
+    String adsagentString,userType,us_id="",my_name="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +44,8 @@ public class ProfileActivity extends AppCompatActivity {
             uphone.setText(logged_userdata[3]);
             udob.setText(logged_userdata[4]);
             adsagent.setText("My Ads");
-            s_id=logged_userdata[0];
+            us_id=logged_userdata[0];
+            my_name=logged_userdata[1];
             if (logged_userdata[9]!=null)
             {
 
@@ -59,7 +60,7 @@ public class ProfileActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    adsagent.setVisibility(View.INVISIBLE);
+                    adsagent.setText("View Messages");
                 }
             if(logged_userdata[9].equals("null"))
             {
@@ -79,9 +80,6 @@ public class ProfileActivity extends AppCompatActivity {
             adsagentString=logged_userdata[8];
            // Toast.makeText(getApplicationContext(), adsagentString, Toast.LENGTH_SHORT).show();
 
-
-            if(adsagentString.equals("admin"))
-                adsagent.setVisibility(View.INVISIBLE);
         }
         else if (userType.equals("agent"))
         {
@@ -97,7 +95,8 @@ public class ProfileActivity extends AppCompatActivity {
             udob.setText(logged_showroomdata[4]);
             ulocation.setText(logged_showroomdata[6]);
             adsagent=(Button) findViewById(R.id.myads);
-            s_id=logged_showroomdata[0];
+            us_id=logged_showroomdata[0];
+            my_name=logged_showroomdata[1];
             if(logged_showroomdata[8].equals("CAR"))
             {
                 adsagent.setText("Add Latest Car");
@@ -109,7 +108,7 @@ public class ProfileActivity extends AppCompatActivity {
             }
             else
             {
-                adsagent.setVisibility(View.INVISIBLE);
+                adsagent.setText("View Messages");
             }
             //Toast.makeText(getApplicationContext(), adsagentString, Toast.LENGTH_SHORT).show();
 
@@ -190,9 +189,19 @@ public class ProfileActivity extends AppCompatActivity {
 
         }
 
-        else if(adsagent.getText().toString().equals("My Ads"))
+        else if(adsagent.getText().toString().equals("View Messages"))
         {
-            Toast.makeText(getApplicationContext(), "User", Toast.LENGTH_SHORT).show();
+            if (us_id.equals("")||my_name.equals(""))
+            {
+
+            }
+            else
+            {
+                Intent i = new Intent(getApplicationContext(), UserMSGLookup.class);
+                i.putExtra("u_name", my_name);
+                i.putExtra("u_id", us_id);
+                startActivity(i);
+            }
         }
 
 
@@ -204,7 +213,7 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     public void interaction(View view) {
-        if (s_id.equals(""))
+        if (us_id.equals(""))
         {
 
         }
@@ -213,14 +222,14 @@ public class ProfileActivity extends AppCompatActivity {
             if (interationRED.getText().toString().equals("Check Car Queries")) {
                 //Toast.makeText(getApplicationContext(),"BIKE",Toast.LENGTH_LONG).show();
                 Intent i = new Intent(ProfileActivity.this, AgentMSGLookup.class);
-                i.putExtra("s_id", s_id);
+                i.putExtra("s_id", us_id);
                 i.putExtra("v_type", "CAR");
                 startActivity(i);
             }
             else if (interationRED.getText().toString().equals("Check Bike Queries")) {
                 Intent i = new Intent(ProfileActivity.this, AgentMSGLookup.class);
                 //Toast.makeText(getApplicationContext(),"CAR",Toast.LENGTH_LONG).show();
-                i.putExtra("s_id", s_id);
+                i.putExtra("s_id", us_id);
                 i.putExtra("v_type", "BIKE");
                 startActivity(i);
 
@@ -228,5 +237,28 @@ public class ProfileActivity extends AppCompatActivity {
 
             }
         }
+    }
+
+    public void editProfile(View view)
+
+    {
+        if(us_id.equals(""))
+        {
+
+        }
+        else {
+            if (adsagent.getText().toString().equals("View Messages")) {
+                Intent i = new Intent(ProfileActivity.this, UpdateProfile_User.class);
+                //Toast.makeText(getApplicationContext(),"CAR",Toast.LENGTH_LONG).show();
+                i.putExtra("u_id", us_id);
+                startActivity(i);
+            } else {
+                Intent i = new Intent(ProfileActivity.this, UpdateProfile_Agent.class);
+                //Toast.makeText(getApplicationContext(),"CAR",Toast.LENGTH_LONG).show();
+                i.putExtra("s_id", us_id);
+                startActivity(i);
+            }
+        }
+
     }
 }

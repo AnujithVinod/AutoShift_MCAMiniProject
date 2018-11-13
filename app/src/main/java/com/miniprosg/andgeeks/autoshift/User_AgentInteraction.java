@@ -77,7 +77,7 @@ public class User_AgentInteraction extends AppCompatActivity {
         SNAME=extras.getString("s_name");
         UNAME=extras.getString("u_name");
         VID= extras.getString("v_id");
-
+        Toast.makeText(getApplicationContext(),"Please Click Refresh To Load Messages",Toast.LENGTH_LONG).show();
 
         setContentView(R.layout.activity_user_agent_interaction);
         findViewById(R.id.useragentLayout).setOnTouchListener(new View.OnTouchListener()
@@ -97,7 +97,7 @@ public class User_AgentInteraction extends AppCompatActivity {
         UserName=(TextView)findViewById(R.id.userName);
         MSGResponse=(TextView)findViewById(R.id.response);
         MSGRequest.setText("");
-        fillCommunicationMsgs();
+        //fillCommunicationMsgs();
 
         AgentName.setText(SNAME);
         UserName.setText(UNAME+" (YOU)");
