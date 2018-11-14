@@ -65,6 +65,7 @@ public class User_AgentInteraction extends AppCompatActivity {
     String base_url=predifValues.returnipaddressurl();
     private ProgressDialog pDialog;
     StringBuilder sb;
+    int msgstatus=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,6 +125,7 @@ public class User_AgentInteraction extends AppCompatActivity {
                 else
                 {   MSGRequest.setText("");
                     fillMsgDB(msg,formattedDate,formattedTime);
+                    msgstatus=1;
                 }
 
             }
@@ -371,4 +373,60 @@ public class User_AgentInteraction extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+    public void notifyAgentviaEmail() {
+
+        JSONObject request = new JSONObject();
+        try {
+            //Populate the request parameters
+            request.put("s_id", SID);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        JsonObjectRequest jsArrayRequest = new JsonObjectRequest
+                (Request.Method.POST, base_url+"extras/notifymsg_agentmailer.php", request, new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        pDialog.dismiss();
+                        try {
+                            //Check if user got logged in successfully
+                            //Toast.makeText(getApplicationContext(),"HIHIHI",Toast.LENGTH_LONG).show();
+                            if (response.getInt("status") == 1) {
+
+                            }else{
+
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        pDialog.dismiss();
+
+                        //Display error message whenever an error occurs
+                        //Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+
+        // Access the RequestQueue through your singleton class.
+        MySingleton.getInstance(this).addToRequestQueue(jsArrayRequest);
+
+
+    }
+    @Override
+    protected void onDestroy() {
+
+        if(msgstatus==1)
+        {
+            //Toast.makeText(getApplicationContext(), SID, Toast.LENGTH_SHORT).show();
+            notifyAgentviaEmail();
+        }
+        super.onDestroy();
+    }
+
+
 }

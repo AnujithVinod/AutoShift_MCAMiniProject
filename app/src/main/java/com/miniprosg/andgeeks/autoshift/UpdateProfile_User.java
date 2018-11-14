@@ -59,8 +59,8 @@ public class UpdateProfile_User extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         UID=extras.getString("u_id");
-//
-        selectEmail=(EditText)findViewById(R.id.userEmailId);
+
+        selectEmail=(TextView) findViewById(R.id.userEmailId);
         selectLocation=(EditText)findViewById(R.id.location);
         selectMobile=(EditText)findViewById(R.id.mobileNumber);
         selectName=(EditText)findViewById(R.id.fullName);
@@ -70,7 +70,7 @@ public class UpdateProfile_User extends AppCompatActivity {
 
     }
 
-    private void fillContentView() {
+    public void fillContentView() {
 
         JSONObject request = new JSONObject();
         try {
@@ -115,6 +115,11 @@ public class UpdateProfile_User extends AppCompatActivity {
 
         // Access the RequestQueue through your singleton class.
         MySingleton.getInstance(this).addToRequestQueue(jsArrayRequest);
+
+
+        Toast.makeText(getApplicationContext(),"Welcome",Toast.LENGTH_LONG).show();
+
+
     }
 
 
@@ -273,10 +278,9 @@ public class UpdateProfile_User extends AppCompatActivity {
         JSONObject request = new JSONObject();
         try {
             //Populate the request parameters
-
+            request.put("u_id",UID);
             request.put("uname", sUname);
             request.put("uemail", selectEmail.getText().toString());
-            request.put("upass", sPwd);
             request.put("uphone", sPhone);
             request.put("ulocation", slocation);
             request.put("usecans", sSecAns);
@@ -302,6 +306,8 @@ public class UpdateProfile_User extends AppCompatActivity {
                                     config.writeLoginStatus(false);
                                     config.writeLoggedEmpty();
                                     Toast.makeText(getApplicationContext(),"You have been logged out",Toast.LENGTH_SHORT).show();
+                                    Intent i= new Intent(getApplicationContext(),MainActivity.class);
+                                    startActivity(i);
                                 }
 
                                 Toast.makeText(getApplicationContext(), response.getString("message"), Toast.LENGTH_SHORT).show();
