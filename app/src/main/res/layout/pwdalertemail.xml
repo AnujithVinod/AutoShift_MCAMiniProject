@@ -12,6 +12,7 @@
         android:layout_height="72dp"
         android:gravity="top"
         android:hint="Enter Email Address Here"
+        android:inputType="textEmailAddress"
         android:lines="8"
         android:maxLines="3"
         android:minLines="6"

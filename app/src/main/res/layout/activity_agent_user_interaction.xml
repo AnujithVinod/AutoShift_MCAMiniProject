@@ -91,6 +91,7 @@
                 android:hint="Write a message"
                 android:inputType="text"
                 android:paddingHorizontal="10dp"
+                android:singleLine="false"
                 android:text="" />
 
 
