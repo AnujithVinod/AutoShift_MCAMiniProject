@@ -47,7 +47,26 @@
             android:layout_height="1px"
             android:background="@color/white_greyish" />
 
+        <TextView
+            android:id="@+id/sbrand"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:hint="Brand Name"
+            android:inputType="textCapWords"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="16sp" />
 
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/white_greyish" />
 
         <TextView
             android:id="@+id/userEmailId"
@@ -133,7 +152,7 @@
             android:background="@color/white_greyish" />
 
         <EditText
-            android:id="@+id/address"
+            android:id="@+id/saddress"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"

@@ -151,6 +151,8 @@ public class ProfileActivity extends AppCompatActivity {
                         config.writeLoggedUser(null,null,null,null,null,null,null,null,null,null);
                         Toast.makeText(getApplicationContext(),"You have been logged out",Toast.LENGTH_SHORT).show();
                         finish();
+                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(i);
                         dialog.cancel();
 
                     }

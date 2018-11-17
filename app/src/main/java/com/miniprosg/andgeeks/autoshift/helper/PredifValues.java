@@ -5,6 +5,6 @@ public class PredifValues {
 
     public String returnipaddressurl()
     {
-        return "http://10.10.157.62/autoshift_db/";
+        return "http://192.168.1.2/autoshift_db/";
     }
 }
