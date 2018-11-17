@@ -49,7 +49,7 @@ public class Fragment_AddBikeMain extends Fragment {
 
         btnback = (Button) myview.findViewById(R.id.back);
         btnnext = (Button) myview.findViewById(R.id.next);
-
+        getActivity().setTitle("Bike OverView");
 
         tbrand=(TextView)myview.findViewById(R.id.bbrand);
 

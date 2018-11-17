@@ -51,7 +51,7 @@ public class Fragment_AddCarDimen extends Fragment {
 //        eofeatures=(EditText)myview.findViewById(R.id.cofeature);
 //
 //        treldate=(TextView) myview.findViewById(R.id.creldate);
-
+        getActivity().setTitle("Dimension Details");
         elength.setText(agentAddCars.globalState_cars.gcd_length);
         ewidth.setText(agentAddCars.globalState_cars.gcd_width);
         eheight.setText(agentAddCars.globalState_cars.gcd_height);

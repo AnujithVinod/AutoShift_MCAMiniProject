@@ -43,7 +43,7 @@ public class Fragment_AddCarBrkStr extends Fragment {
         estype.setText(agentAddCars.globalState_cars.gcbs_strtype);
         etrad.setText(agentAddCars.globalState_cars.gcbs_trad);
         eodetails.setText(agentAddCars.globalState_cars.gcbs_odetails);
-
+        getActivity().setTitle("Brake and Steering Details");
         // test.setText(agentAddCars.globalState_cars.gc_name);
         btnnext.setOnClickListener(new View.OnClickListener() {
             @Override

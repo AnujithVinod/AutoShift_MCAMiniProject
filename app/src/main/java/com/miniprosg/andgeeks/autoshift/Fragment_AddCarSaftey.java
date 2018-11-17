@@ -66,7 +66,7 @@ public class Fragment_AddCarSaftey extends Fragment {
         stalarm = (MaterialSpinner) myview.findViewById(R.id.spinn_ta);
         sdabag = (MaterialSpinner) myview.findViewById(R.id.spinn_da);
         spabag = (MaterialSpinner) myview.findViewById(R.id.spinn_pa);
-
+        getActivity().setTitle("Saftey Details");
         salock.setItems("No", "Yes");
         salock.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
 

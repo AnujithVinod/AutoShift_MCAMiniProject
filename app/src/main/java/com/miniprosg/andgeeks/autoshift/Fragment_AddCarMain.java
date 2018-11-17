@@ -47,7 +47,7 @@ public class Fragment_AddCarMain extends Fragment {
         btnback = (Button) myview.findViewById(R.id.back);
         btnnext = (Button) myview.findViewById(R.id.next);
 
-
+        getActivity().setTitle("Car OverView");
         tbrand=(TextView)myview.findViewById(R.id.cbrand);
 
         tbrand.setText(agentAddCars.loggedbrand);

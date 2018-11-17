@@ -45,7 +45,7 @@ public class Fragment_AddBikeTyrBrk extends Fragment {
         ewsize.setText(agentAddBikes.globalState_bikes.gbtb_wlsize);
         ettype.setText(agentAddBikes.globalState_bikes.gbtb_trtype);
         eodetails.setText(agentAddBikes.globalState_bikes.gbtb_odetails);
-
+        getActivity().setTitle("Brake and Tyre Details");
         // test.setText(agentAddBikes.globalState_bikes.gb_name);
         btnnext.setOnClickListener(new View.OnClickListener() {
             @Override

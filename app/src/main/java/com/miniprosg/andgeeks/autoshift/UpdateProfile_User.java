@@ -396,4 +396,34 @@ public class UpdateProfile_User extends AppCompatActivity {
 
         finish();
     }
+
+    public void onBackPressed() {
+
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(UpdateProfile_User.this);
+        builder1.setMessage("Are you sure to Exit to Previous Menu? Any unsaved changes will be lost!");
+        builder1.setCancelable(true);
+
+        builder1.setPositiveButton(
+                "Yes",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        UpdateProfile_User.super.onBackPressed();
+                        //ARE YOU LOGGED IN ALREADY? USING SHARED PREFERENCES
+
+                    }
+                });
+
+        builder1.setNegativeButton(
+                "No",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+
+    }
+
 }

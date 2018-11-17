@@ -77,7 +77,7 @@ public class Fragment_AddCarFuel extends Fragment {
         efcapacity.setText(agentAddCars.globalState_cars.gcf_tcap);
         efenorm.setText(agentAddCars.globalState_cars.gcf_enorm);
         efodetails.setText(agentAddCars.globalState_cars.gcf_odetails);
-
+        getActivity().setTitle("Fuel Details");
         MaterialSpinner spfuelt = (MaterialSpinner) myview.findViewById(R.id.spinn_ft);
         spfuelt.setItems("Petrol", "Diesel", "Electric", "Hybrid");
         spfuelt.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {

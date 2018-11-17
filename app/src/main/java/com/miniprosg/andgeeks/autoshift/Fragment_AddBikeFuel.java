@@ -62,7 +62,7 @@ public class Fragment_AddBikeFuel extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         myview=inflater.inflate(R.layout.fragment_add_bikefuel,container,false);
-
+        getActivity().setTitle("Fuel Details");
 
         agentAddBikes =(AgentAddBikes) getActivity();
         btnback=(Button)myview.findViewById(R.id.back);

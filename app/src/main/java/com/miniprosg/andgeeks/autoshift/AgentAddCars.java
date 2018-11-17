@@ -1,6 +1,8 @@
 package com.miniprosg.andgeeks.autoshift;
 
 import android.app.FragmentManager;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -28,6 +30,34 @@ public class AgentAddCars extends AppCompatActivity {
         final FragmentManager fragmentManager= getFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.addcar_frame,new Fragment_AddCarMain()).commit();
         setContentView(R.layout.activity_agent_add_cars);
+
+    }
+    public void onBackPressed() {
+
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(AgentAddCars.this);
+        builder1.setMessage("Are you sure to Exit to Previous Menu? Any unsaved changes will be lost!");
+        builder1.setCancelable(true);
+
+        builder1.setPositiveButton(
+                "Yes",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        AgentAddCars.super.onBackPressed();
+                        //ARE YOU LOGGED IN ALREADY? USING SHARED PREFERENCES
+
+                    }
+                });
+
+        builder1.setNegativeButton(
+                "No",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
 
     }
 

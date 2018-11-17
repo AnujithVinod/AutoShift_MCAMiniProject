@@ -1,8 +1,10 @@
 package com.miniprosg.andgeeks.autoshift;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -610,5 +612,35 @@ public class AgentRegister extends AppCompatActivity {
         MySingleton.getInstance(this).addToRequestQueue(jsArrayRequest);
 
     }
+
+    public void onBackPressed() {
+
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(AgentRegister.this);
+        builder1.setMessage("Are you sure to Exit to Previous Menu? Any unsaved changes will be lost!");
+        builder1.setCancelable(true);
+
+        builder1.setPositiveButton(
+                "Yes",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        AgentRegister.super.onBackPressed();
+                        //ARE YOU LOGGED IN ALREADY? USING SHARED PREFERENCES
+
+                    }
+                });
+
+        builder1.setNegativeButton(
+                "No",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+
+    }
+
 
 }

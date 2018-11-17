@@ -60,7 +60,7 @@ public class Fragment_AddBikeTransEng extends Fragment {
         etopspeed=(EditText)myview.findViewById(R.id.btopspeed);
         eaccelaration=(EditText)myview.findViewById(R.id.bacceration);
         eodetails=(EditText)myview.findViewById(R.id.bodetails);
-
+        getActivity().setTitle("Transmission and Engine Details");
         eetype.setText(agentAddBikes.globalState_bikes.gbte_type);
         egear.setText(agentAddBikes.globalState_bikes.gbte_gearno);
         edesc.setText(agentAddBikes.globalState_bikes.gbte_drive);

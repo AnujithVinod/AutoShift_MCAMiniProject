@@ -2,6 +2,7 @@ package com.miniprosg.andgeeks.autoshift;
 
 import android.app.Activity;
 import android.app.FragmentManager;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
@@ -12,6 +13,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -127,11 +129,6 @@ public class MainActivity extends AppCompatActivity
 
     public void login_agentdashboard()
     {
-//        SharaedPrefernceConfig config;
-//        config=new SharaedPrefernceConfig(getApplicationContext());
-//        config.writeLoginStatus(false);
-//        config.writeLoggedEmpty();
-
 
         if(config.readStatus())
         {
@@ -170,35 +167,36 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
+        }
+        else
+        {
+            AlertDialog.Builder builder1 = new AlertDialog.Builder(MainActivity.this);
+            builder1.setMessage("Exit the Application? Any unsaved changes will be lost!");
+            builder1.setCancelable(true);
+
+            builder1.setPositiveButton(
+                    "Yes",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            MainActivity.super.onBackPressed();
+                            //ARE YOU LOGGED IN ALREADY? USING SHARED PREFERENCES
+
+                        }
+                    });
+
+            builder1.setNegativeButton(
+                    "No",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    });
+
+            AlertDialog alert11 = builder1.create();
+            alert11.show();
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-
-            Intent i= new Intent(getApplicationContext(),SettingsActivity.class);
-            startActivity(i);
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override

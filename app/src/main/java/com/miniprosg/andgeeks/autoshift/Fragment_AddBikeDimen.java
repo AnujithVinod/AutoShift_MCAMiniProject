@@ -54,7 +54,7 @@ public class Fragment_AddBikeDimen extends Fragment {
 //        eofeatures=(EditText)myview.findViewById(R.id.bofeature);
 //
 //        treldate=(TextView) myview.findViewById(R.id.breldate);
-
+        getActivity().setTitle("Dimension Details");
         elength.setText(agentAddBikes.globalState_bikes.gbd_length);
         ewidth.setText(agentAddBikes.globalState_bikes.gbd_width);
         eheight.setText(agentAddBikes.globalState_bikes.gbd_height);

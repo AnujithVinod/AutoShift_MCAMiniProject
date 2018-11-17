@@ -59,7 +59,7 @@ public class Fragment_AddBikeSafteyElec extends Fragment {
         AlertDialog alert11 = builder1.create();
         alert11.show();
 
-
+        getActivity().setTitle("Saftey and Electrical Features");
         sbatt = (MaterialSpinner) myview.findViewById(R.id.spinn_bbt);
         sspeed = (MaterialSpinner) myview.findViewById(R.id.spinn_spt);
         sodo = (MaterialSpinner) myview.findViewById(R.id.spinn_sot);

@@ -50,6 +50,7 @@ public class Fragment_AddCarTransEng extends Fragment {
 
         AlertDialog alert11 = builder1.create();
         alert11.show();
+
         eetype=(EditText)myview.findViewById(R.id.ctype);
         egear=(EditText)myview.findViewById(R.id.cgear);
         edesc=(EditText)myview.findViewById(R.id.cdesc);
@@ -60,7 +61,7 @@ public class Fragment_AddCarTransEng extends Fragment {
         etopspeed=(EditText)myview.findViewById(R.id.ctopspeed);
         eaccelaration=(EditText)myview.findViewById(R.id.cacceration);
         eodetails=(EditText)myview.findViewById(R.id.codetails);
-
+        getActivity().setTitle("Transmission and Engine Details");
         eetype.setText(agentAddCars.globalState_cars.gcte_type);
         egear.setText(agentAddCars.globalState_cars.gcte_gear);
         edesc.setText(agentAddCars.globalState_cars.gcte_desc);
