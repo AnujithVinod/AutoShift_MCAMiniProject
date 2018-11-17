@@ -392,9 +392,6 @@ public class UpdateProfile_User extends AppCompatActivity {
 
         AlertDialog alert11 = builder1.create();
         alert11.show();
-
-
-        finish();
     }
 
     public void onBackPressed() {
