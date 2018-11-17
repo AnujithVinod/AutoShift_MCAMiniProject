@@ -32,6 +32,7 @@ public class FeedBack extends AppCompatActivity {
         Phone = (EditText) findViewById(R.id.fphone);
         Name = (EditText) findViewById(R.id.fname);
         Message = (EditText) findViewById(R.id.fcomplaint);
+        setTitle("Feedbacks and Suggesions");
 
     }
 
