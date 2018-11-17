@@ -137,10 +137,13 @@
         <activity
             android:name=".UserMSGLookup"
             android:label="View Conversations" />
-        <activity android:name=".UpdateProfile_User"
+        <activity
+            android:name=".UpdateProfile_User"
             android:label="Update Profile" />
-        <activity android:name=".UpdateProfile_Agent"
-            android:label="Update Profile" ></activity>
+        <activity
+            android:name=".UpdateProfile_Agent"
+            android:label="Update Profile" />
+        <activity android:name=".FeedBack"></activity>
     </application>
 
 </manifest>
