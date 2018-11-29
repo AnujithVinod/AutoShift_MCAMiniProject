@@ -23,7 +23,8 @@ public class ShowRoomView extends AppCompatActivity {
             v_email,
             v_phone,
             v_agent,
-            v_address;
+            v_address,
+            v_gstin;
     PredifValues predifValues=new PredifValues();
     String base_url=predifValues.returnipaddressurl();
     @Override
@@ -43,6 +44,7 @@ public class ShowRoomView extends AppCompatActivity {
         v_phone=(TextView)findViewById(R.id.v_phone);
         v_agent=(TextView)findViewById(R.id.v_agent);
         v_address=(TextView)findViewById(R.id.v_address);
+        v_gstin=(TextView)findViewById(R.id.v_gstin);
 
         fillContentView();
 
@@ -71,6 +73,7 @@ public class ShowRoomView extends AppCompatActivity {
                                 v_agent.setText(response.getString("sagent"));
                                 v_email.setText(response.getString("semail"));
                                 v_phone.setText(response.getString("sphone"));
+                                v_gstin.setText(response.getString("sgstin"));
                             }else{
                                 Toast.makeText(getApplicationContext(),
                                         response.getString("message"), Toast.LENGTH_SHORT).show();

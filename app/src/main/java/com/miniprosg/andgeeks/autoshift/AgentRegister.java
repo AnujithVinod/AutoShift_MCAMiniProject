@@ -52,11 +52,11 @@ public class AgentRegister extends AppCompatActivity {
     private ProgressDialog pDialog;
     String base_url=predifValues.returnipaddressurl();
     InputStream inputStream=null;
-    String state="",city="",brand="",name,email,pwd,confPwd,mobile,secans,agent,address,carOrbike;
+    String state="",city="",brand="",name,email,pwd,confPwd,mobile,secans,agent,address,carOrbike,sgstin;
     TextView selectDate,cbbanner;
     CheckBox selectTandC;
     int mYear, mMonth, mDay;
-    EditText selectName,selectEmail,selectPwd,selectConfPwd,selectMobile,selectAddress,selectAgent,selectSecans;
+    EditText selectName,selectEmail,selectPwd,selectConfPwd,selectMobile,selectAddress,selectAgent,selectSecans,selectGSTIN;
     MaterialSpinner spinnerbrand,spinnerstate,spinnercity;
 
     ArrayList<String> stateList=new ArrayList<>();
@@ -94,6 +94,7 @@ public class AgentRegister extends AppCompatActivity {
         selectConfPwd=(EditText)findViewById(R.id.confirmPassword);
         selectEmail=(EditText)findViewById(R.id.userEmailId);
         selectAddress=(EditText)findViewById(R.id.address);
+        selectGSTIN=(EditText)findViewById(R.id.gstNumber);
         selectMobile=(EditText)findViewById(R.id.mobileNumber);
         selectName=(EditText)findViewById(R.id.fullName);
         selectAgent=(EditText)findViewById(R.id.agentName);
@@ -419,6 +420,7 @@ public class AgentRegister extends AppCompatActivity {
         agent=selectAgent.getText().toString();
         address=selectAddress.getText().toString();
         secans=selectSecans.getText().toString();
+        sgstin=selectGSTIN.getText().toString();
         if (validateInputs()&&(selectTandC.isChecked())) {
 
             registerMe();
@@ -437,6 +439,7 @@ public class AgentRegister extends AppCompatActivity {
             //Populate the request parameters
 
             request.put("sname", name);
+            request.put("sgstin",sgstin);
             request.put("semail", email);
             request.put("stype",carOrbike);
             request.put("spass", pwd);
@@ -544,6 +547,11 @@ public class AgentRegister extends AppCompatActivity {
         if("".equals(secans)){
             selectSecans.setError("Security Answer cannot be empty");
             selectSecans.requestFocus();
+            return false;
+        }
+        if("".equals(sgstin)){
+            selectGSTIN.setError("Invalid GST Info");
+            selectGSTIN.requestFocus();
             return false;
         }
         if("".equals(brand)){

@@ -16,6 +16,15 @@
         android:padding="10dp"
         android:gravity="center"
         android:id="@+id/ll">
+
+        <pl.droidsonroids.gif.GifTextView
+            android:layout_width="252dp"
+            android:layout_height="154dp"
+            android:layout_below="@+id/imageView2"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/carbikehome"
+            android:scaleY="1.5"
+            android:scaleX="1.5"/>
         <LinearLayout
             android:clipToPadding="false"
             android:gravity="center"
