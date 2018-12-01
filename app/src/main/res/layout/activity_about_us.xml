@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    android:background="@drawable/team_autoshift">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:padding="20dp" >
+
+        <TextView
+            android:id="@+id/carorbikebanner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="80dp"
+            android:text="About us"
+            android:textColor="@color/white_greyish"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/fname"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:hint="Team Members:\nAnujith N Vinod,\nArya Reji,\nDevika M Adhithyu,\nAnju Susan Thomas"
+            android:inputType="textCapWords"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/white_greyish" />
+
+        <TextView
+            android:id="@+id/femail"
+            android:textStyle="bold"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:hint="Scrum Master:\nDevika M Adhithyu"
+            android:inputType="textEmailAddress"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="16sp" />
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/white_greyish" />
+
+
+        <TextView
+            android:id="@+id/fphone"
+            android:textStyle="bold"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:hint="Project Guide:\nPreetha S.\nAssistant Prof.,\nDepartment of MCA,\nSaintgits College of Engineering"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="16sp" />
+
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/white_greyish" />
+
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/white_greyish" />
+
+
+        <TextView
+            android:id="@+id/fcomplaint"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:text="About The Project:\n\nThis Android Application AutoShift allows the users to search for bikes and cars by providing a search criteria. It is difficult and hard to look for cars or bikes due to the relatively higher brand competitions. \n\nThe application primarily focuses on the users need and acts as a medium for this search. The Showrooms can Register an account with a dedicated person who is in charge of the Application Handling. He can Add Cars and Bikes which are newly released by the brand. \nA Vehicle once registered by a showroom is available for the entire collections for that brand. User logs in to his account, searches for the vehicle. \n\nThe Searching criteria is common to both Guests and Users. However a user can Locate nearest Showroom to him for that particular brand. He can contact the Showroom agent for further queries. \n\nThe Profile of the Agent is also visible to the user for further communications. At the time of registration the application is self reliant and sent an email to the user or agents email id with email and password for logging in. \n\nThe Users can also use the mailing functionality free of cost to reset the password and send messages to the application maintainer for queries and complaints."
+            android:inputType="textMultiLine"
+            android:padding="10dp"
+            android:singleLine="false"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/white_greyish" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/white_greyish" />
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@color/com_facebook_button_background_color_selected"
+            android:padding="3dp"
+            android:textColor="#FFFFFF"
+            android:text="View Source Code in GitHub"
+            android:onClick="gitSource"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/white_greyish" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/white_greyish" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@color/com_facebook_button_background_color_selected"
+            android:padding="3dp"
+            android:textColor="#FFFFFF"
+            android:text="View Source Code in Google Drive"
+            android:onClick="googleSource"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+</ScrollView>

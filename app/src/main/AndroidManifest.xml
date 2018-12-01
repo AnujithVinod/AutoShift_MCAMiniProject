@@ -143,7 +143,8 @@
         <activity
             android:name=".UpdateProfile_Agent"
             android:label="Update Profile" />
-        <activity android:name=".FeedBack"></activity>
+        <activity android:name=".FeedBack" />
+        <activity android:name=".AboutUS"></activity>
     </application>
 
 </manifest>

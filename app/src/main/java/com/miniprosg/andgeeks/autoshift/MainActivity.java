@@ -216,7 +216,8 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_merchent) {
             login_agentdashboard();
         } else if (id == R.id.nav_share) {
-
+            Intent i = new Intent(getApplicationContext(), AboutUS.class);
+            startActivity(i);
         } else if (id == R.id.nav_send) {
             feedback();
 

@@ -43,7 +43,7 @@
         <menu>
             <item
                 android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/ic_about_us"
                 android:title="Share" />
             <item
                 android:id="@+id/nav_send"
